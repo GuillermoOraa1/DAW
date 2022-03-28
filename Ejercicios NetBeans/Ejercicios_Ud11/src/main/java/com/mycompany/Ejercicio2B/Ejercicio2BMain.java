@@ -5,6 +5,10 @@
 package com.mycompany.Ejercicio2B;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.Scanner;
 
 /**
  *
@@ -21,8 +25,38 @@ public class Ejercicio2BMain {
     }
     
     public static void mostrarDatosDelAlumno(){
-        File datosDeLosAlumnos= new File("C:\\Users\\DAW\\Desktop\\DatosParaEjerciciosFicheros-2\\alumnos_notas.txt");
+        File FicheroDatosDeLosAlumnos= new File("C:\\Users\\DAW\\Desktop\\DatosParaEjerciciosFicheros-2\\alumnos_notas.txt");
+        try{
+            Scanner datosDeLosAlumnos= new Scanner(FicheroDatosDeLosAlumnos);
+            double notaMedia=0;
+            ArrayList<String[]> lineas= new ArrayList<String[]>();
+            ArrayList<Alumno>alumnos= new ArrayList<Alumno>();
+            while(datosDeLosAlumnos.hasNext()){ 
+                lineas.add(datosDeLosAlumnos.nextLine().split(" "));
+            }
+            for (int x = 0; x < lineas.size(); x++) {
+                for (int i = 2; i < lineas.get(x).length; i++) {
+                    notaMedia+=Double.parseDouble(lineas.get(x)[i]);          
+                }
+                alumnos.add(new Alumno(lineas.get(x)[0], lineas.get(x)[1], (notaMedia/(lineas.get(x).length-2))));
+                notaMedia=0;
+            } 
+            alumnos.sort(new Comparator<Alumno>(){
+                public int compare(Alumno a1, Alumno a2) {
+                    if (a1.getNotaMedia()>a2.getNotaMedia()) return -1;
+                    if (a1.getNotaMedia()<a2.getNotaMedia()) return 1; 
+                    return 0;                   
+                }
+            });
+            
+            for(Alumno alumno:alumnos){
+                //System.out.println(alumno.getNombre()+" "+alumno.getApellido()+" "+alumno.getNotaMedia());
+                System.out.printf("%s %s: %.2f\n",alumno.getNombre(),alumno.getApellido(),alumno.getNotaMedia());
+            }
+        
+        }catch(FileNotFoundException f){
+            f.getMessage();
+        }
         
     }
-    
 }
