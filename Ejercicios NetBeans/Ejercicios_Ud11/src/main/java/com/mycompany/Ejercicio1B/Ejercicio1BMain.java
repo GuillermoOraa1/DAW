@@ -34,6 +34,7 @@ public class Ejercicio1BMain {
                 if(menor>numero) menor=numero;
             }
             System.out.printf("El valor mayor es %d y el menor es %d.",mayor,menor);
+            sc.close();
         }catch(FileNotFoundException f){
             f.printStackTrace();
         }      

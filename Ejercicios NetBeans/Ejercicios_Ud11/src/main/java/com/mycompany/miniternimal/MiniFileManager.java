@@ -1,3 +1,4 @@
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
@@ -8,6 +9,7 @@ import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.regex.Pattern;
 
 /**
  *
@@ -32,14 +34,21 @@ public class MiniFileManager {
             System.out.println(this.file.getAbsolutePath());;
         }else if (ruta.equals("..")){
             this.file=this.file.getParentFile();
-        }else{
-            File fichero=new File(ruta);
+        }else if (Pattern.matches("[A-Z]+:.*", ruta)){
+            File fichero=new File(ruta.concat("\\"));
             if (fichero.exists()) {
                this.file= fichero; 
             }else{
-                throw new MiniFileManagerException("La ruta indicada no existe");
+                throw new MiniFileManagerException("La ruta indicada no existe linea 42");
             }        
-        }     
+        }else{
+        	File fichero=new File(this.file.getAbsolutePath().concat("\\"+ruta));
+            if (fichero.exists()) {
+                this.file= fichero; 
+             }else{
+                 throw new MiniFileManagerException("La ruta indicada no existe linea 49");
+             }        	
+        }    
     }
     
     public File[] ls(){

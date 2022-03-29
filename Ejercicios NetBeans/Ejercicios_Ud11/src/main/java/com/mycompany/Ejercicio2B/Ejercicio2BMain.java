@@ -34,6 +34,7 @@ public class Ejercicio2BMain {
             while(datosDeLosAlumnos.hasNext()){ 
                 lineas.add(datosDeLosAlumnos.nextLine().split(" "));
             }
+            datosDeLosAlumnos.close();
             for (int x = 0; x < lineas.size(); x++) {
                 for (int i = 2; i < lineas.get(x).length; i++) {
                     notaMedia+=Double.parseDouble(lineas.get(x)[i]);          

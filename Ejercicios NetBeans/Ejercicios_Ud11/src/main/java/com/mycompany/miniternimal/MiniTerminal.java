@@ -24,7 +24,7 @@ public class MiniTerminal {
             do {
                 //TODO El .print no funciona y hay que acveriguar por que .print("\n C:\\Users\\Guillermo>");
                 try{
-                    System.out.println("\nC:\\Users\\Guillermo>");
+                    System.out.println(mfm.pwd().concat(">"));
                     comando=sc.nextLine();
                     String[] comandos=comando.split(" ");
                     switch(comandos[0]){
@@ -36,9 +36,6 @@ public class MiniTerminal {
                             if (comandos.length<=1) {
                                mfm.cd(""); 
                             }else mfm.cd(comandos[1]);
-                            //se podria hacer una expresion regular usando la C: para identificar si nos pasan una ruta absoluta o relativa y en caso de que fuese relativa limitar la busqueda
-                            // usando la lista de ficheros generada con el comando ls
-
                         break;
 
                         case "ls":
