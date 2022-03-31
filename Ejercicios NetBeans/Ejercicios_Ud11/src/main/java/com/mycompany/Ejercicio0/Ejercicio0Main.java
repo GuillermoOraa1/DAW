@@ -85,7 +85,8 @@ public class Ejercicio0Main {
             System.out.println("Archivos no creados");
         }
         
-       
+        System.out.println("Los valores de la brújula son: "+EnumeradosPosicionesBrujula.Norte+
+                EnumeradosPosicionesBrujula.Sur+EnumeradosPosicionesBrujula.Este+EnumeradosPosicionesBrujula.Oeste); 
     }
     public static void eliminar(File fichero){
      if (fichero.exists() && fichero.isDirectory()) { 

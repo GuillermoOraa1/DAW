@@ -26,15 +26,16 @@ public class Ejercicio2BMain {
     
     public static void mostrarDatosDelAlumno(){
         File FicheroDatosDeLosAlumnos= new File("C:\\Users\\DAW\\Desktop\\DatosParaEjerciciosFicheros-2\\alumnos_notas.txt");
+        Scanner datosDeLosAlumnos=null;
         try{
-            Scanner datosDeLosAlumnos= new Scanner(FicheroDatosDeLosAlumnos);
+            datosDeLosAlumnos= new Scanner(FicheroDatosDeLosAlumnos);
             double notaMedia=0;
             ArrayList<String[]> lineas= new ArrayList<String[]>();
             ArrayList<Alumno>alumnos= new ArrayList<Alumno>();
             while(datosDeLosAlumnos.hasNext()){ 
                 lineas.add(datosDeLosAlumnos.nextLine().split(" "));
             }
-            datosDeLosAlumnos.close();
+            
             for (int x = 0; x < lineas.size(); x++) {
                 for (int i = 2; i < lineas.get(x).length; i++) {
                     notaMedia+=Double.parseDouble(lineas.get(x)[i]);          
@@ -57,6 +58,8 @@ public class Ejercicio2BMain {
         
         }catch(FileNotFoundException f){
             f.getMessage();
+        } finally{
+            datosDeLosAlumnos.close();
         }
         
     }

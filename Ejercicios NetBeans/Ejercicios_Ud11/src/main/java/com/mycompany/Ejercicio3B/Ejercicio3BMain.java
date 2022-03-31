@@ -33,18 +33,20 @@ public class Ejercicio3BMain {
         ArrayList<String>contenidoFicherolectura= new ArrayList<String>();
         //System.out.println("Escriba la ruta del archivo origen.");
         File ficheroLectura=new File("C:\\Users\\DAW\\Desktop\\DatosParaEjerciciosFicheros-2\\usa_personas.txt");
+        Scanner textoLeido=null;
         if (ficheroLectura.exists()){
             try {
-                Scanner textoLeido = new Scanner(ficheroLectura);
+                textoLeido = new Scanner(ficheroLectura);
                 while(textoLeido.hasNext()){
                     contenidoFicherolectura.add(textoLeido.nextLine());
                 }
                 Collections.sort(contenidoFicherolectura);
-                Ejercicio3BMain.crearArchivoEscritura(contenidoFicherolectura);
-                textoLeido.close();
+                Ejercicio3BMain.crearArchivoEscritura(contenidoFicherolectura);     
             } catch (FileNotFoundException ex) {
                 Logger.getLogger(Ejercicio3BMain.class.getName()).log(Level.SEVERE, null, ex);
-            }        
+            } finally{
+                textoLeido.close();
+            }       
         }
     }
     

@@ -24,9 +24,10 @@ public class Ejercicio1BMain {
 
     public static void leerNumeros(){
         int mayor,menor,numero;
+        Scanner sc =null;
         try{
             File ficheroNumeros= new File("C:\\Users\\DAW\\Desktop\\DatosParaEjerciciosFicheros-2\\numeros.txt");
-            Scanner sc = new Scanner(ficheroNumeros); 
+            sc = new Scanner(ficheroNumeros); 
             mayor=menor=sc.nextInt();
             while(sc.hasNext()){
                 numero= sc.nextInt();
@@ -34,10 +35,12 @@ public class Ejercicio1BMain {
                 if(menor>numero) menor=numero;
             }
             System.out.printf("El valor mayor es %d y el menor es %d.",mayor,menor);
-            sc.close();
+            
         }catch(FileNotFoundException f){
             f.printStackTrace();
-        }      
+        }finally{
+            sc.close();
+        } 
     }
     
     
