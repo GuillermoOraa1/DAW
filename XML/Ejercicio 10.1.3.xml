@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalogo>
+   <coche>
+      <nombre>NombreCoche1</nombre>
+      <precio>100</precio>
+      <fecha>01-01-2001</fecha>
+      <potencia>110cv</potencia>
+      <kilometros>1.000</kilometros>
+      <combustible>Gasolina</combustible>
+      <cambio>Manual</cambio>
+      <extras>
+         <sensores>Sensores de lluvia</sensores>
+         <volante>multifuncion</volante>
+         <tapiceria>mixta</tapiceria>
+      </extras>      
+   </coche>
+   <coche>
+   <coche>
+      <nombre>NombreCoche2</nombre>
+      <precio>200</precio>
+      <fecha>01-01-2002</fecha>
+      <potencia>220cv</potencia>
+      <kilometros>2.000</kilometros>
+      <combustible>Gasoil</combustible>
+      <cambio>Automatico</cambio>
+      <extras>
+         <sensores>Sensores de luz</sensores>
+         <volante>multifuncion</volante>
+         <tapiceria>cuero</tapiceria>
+      </extras>      
+   </coche>
+</catalogo>
