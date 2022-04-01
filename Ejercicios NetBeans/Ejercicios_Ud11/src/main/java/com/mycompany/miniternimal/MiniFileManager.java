@@ -20,9 +20,9 @@ import java.util.regex.Pattern;
 public class MiniFileManager {
     private File file;
     
-    /*
-    Usarmeos el objeto MiniFileManager para trabajar con los distintos archivos
-    **/
+    /**
+     * Usaremos el objeto MiniFileManager para trabajar con los distintos archivos
+    */
     public MiniFileManager(String ruta) throws MiniFileManagerException{
         File archivo= new File(ruta);
         if (archivo.exists())this.file=new File(ruta);
@@ -33,7 +33,9 @@ public class MiniFileManager {
     public File getFile() {
         return file;
     }
-
+    /**
+     * El metodo set verifica que el archivo exista antes de realizar el cambio
+    */
     public void setFile(File archivo) throws MiniFileManagerException{
         if (archivo.exists())this.file=archivo;
         else throw new MiniFileManagerException("La ruta indicada no existe");

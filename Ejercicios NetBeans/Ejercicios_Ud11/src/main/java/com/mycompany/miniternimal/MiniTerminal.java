@@ -25,8 +25,10 @@ public class MiniTerminal {
                 //TODO El .print no funciona y hay que acveriguar por que .print("\n C:\\Users\\Guillermo>");
                 try{
                     if(mfm.getFile().isDirectory())System.out.println(mfm.pwd().concat(">"));
-                    //TODO hay que arreglar esto para que me conduzca al fichero padre
-                    else System.out.println(mfm.pwd().concat(">"));
+                    else{
+                        mfm.cd("..");
+                        System.out.println(mfm.pwd().concat(">"));
+                    }
                     comando=sc.nextLine();
                     String[] comandos=comando.split(" ");
                     switch(comandos[0]){
