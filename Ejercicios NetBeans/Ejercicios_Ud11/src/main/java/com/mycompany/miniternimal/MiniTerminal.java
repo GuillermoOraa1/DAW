@@ -24,7 +24,9 @@ public class MiniTerminal {
             do {
                 //TODO El .print no funciona y hay que acveriguar por que .print("\n C:\\Users\\Guillermo>");
                 try{
-                    System.out.println(mfm.pwd().concat(">"));
+                    if(mfm.getFile().isDirectory())System.out.println(mfm.pwd().concat(">"));
+                    //TODO hay que arreglar esto para que me conduzca al fichero padre
+                    else System.out.println(mfm.pwd().concat(">"));
                     comando=sc.nextLine();
                     String[] comandos=comando.split(" ");
                     switch(comandos[0]){
@@ -49,6 +51,12 @@ public class MiniTerminal {
                             mfm.ll();
                         break;
 
+                        case "info":
+                            if (comandos.length<=1) {
+                               mfm.info(); 
+                            }else mfm.info(comandos[1]);                           
+                        break;                        
+
                         case "mkdir":
                             mfm.mkdir(comandos[1]);
                         break;
@@ -63,7 +71,6 @@ public class MiniTerminal {
 
                         case "help":
                         	System.out.println(mfm.help());
-                            
                         break;
 
                         default:
@@ -72,13 +79,13 @@ public class MiniTerminal {
                     }                
                 }catch(MiniFileManagerException e){
                     e.getMessage();
-                    e.printStackTrace();
+                    //e.printStackTrace();
                 }
                      
             } while (!comando.toLowerCase().equals("exit"));        
         }catch(MiniFileManagerException e){
             e.getMessage();
-            e.printStackTrace();
+            //e.printStackTrace();
         }
 
         

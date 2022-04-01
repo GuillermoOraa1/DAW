@@ -9,6 +9,8 @@ import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.regex.Pattern;
 
 /**
@@ -18,12 +20,25 @@ import java.util.regex.Pattern;
 public class MiniFileManager {
     private File file;
     
+    /*
+    Usarmeos el objeto MiniFileManager para trabajar con los distintos archivos
+    **/
     public MiniFileManager(String ruta) throws MiniFileManagerException{
         File archivo= new File(ruta);
         if (archivo.exists())this.file=new File(ruta);
         else throw new MiniFileManagerException("La ruta indicada no existe");
         
     }
+
+    public File getFile() {
+        return file;
+    }
+
+    public void setFile(File archivo) throws MiniFileManagerException{
+        if (archivo.exists())this.file=archivo;
+        else throw new MiniFileManagerException("La ruta indicada no existe");
+    }
+    
     
     public String pwd(){
         return this.file.getAbsolutePath();
@@ -76,6 +91,68 @@ public class MiniFileManager {
             System.out.println("Nombre: "+f.getName()+" Tamano: "+f.length()+" bytes Fecha ultima modificacion: "+sdf.format(f.lastModified()));
         }
     }
+    
+    public void info(){
+        SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy HH:mm:ss");
+        double espacioEnBytes=0.0;
+        double espacioEnMegas=0.0;
+        if (this.file.isFile()) {
+          espacioEnBytes=this.file.length();
+          espacioEnMegas=(this.file.length()/1024);    
+        }
+        if (this.file.isDirectory()){
+            espacioEnBytes=MiniFileManager.medirEspacio(this.file);
+            espacioEnMegas=(espacioEnBytes/1048576); 
+        }
+        System.out.printf("Nombre: %s\nTamano en bytes: %f bytes\nTamano en MB: %.2f M\nFecha ultima modificacion: %s\n",this.file.getName(),espacioEnBytes,espacioEnMegas,sdf.format(this.file.lastModified()));
+    }
+    
+    public static double medirEspacio(File fichero){
+        double espacio=0.0;
+        if (fichero.listFiles().length!=0) {
+            File [] contenido= fichero.listFiles();
+            for (int i = 0; i < contenido.length; i++) {
+                if (contenido[i].isFile())espacio+=contenido[i].length(); 
+                else{
+                   espacio+=MiniFileManager.medirEspacio(contenido[i]);
+                }
+            }
+            return espacio;
+        } 
+        else return fichero.length();
+    }
+    
+    
+    public void info(String ruta)throws MiniFileManagerException{
+        if (Pattern.matches("[A-Z]+:.*", ruta)){
+            File fichero=new File(ruta.concat("\\"));
+            if (fichero.exists()) {
+               this.file= fichero; 
+            }else{
+                throw new MiniFileManagerException("La ruta indicada no existe linea 42");
+            }        
+        }else{
+            File fichero=new File(this.file.getAbsolutePath().concat("\\"+ruta));
+            if (fichero.exists()) {
+                this.file= fichero; 
+             }else{
+                 throw new MiniFileManagerException("La ruta indicada no existe linea 49");
+             }        	
+        }
+        
+        SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy HH:mm:ss");
+        double espacioEnBytes=0.0;
+        double espacioEnMegas=0.0;
+        if (this.file.isFile()) {
+          espacioEnBytes=this.file.length();
+          espacioEnMegas=(this.file.length()/1024);    
+        }
+        if (this.file.isDirectory()){
+            espacioEnBytes=MiniFileManager.medirEspacio(this.file);
+            espacioEnMegas=(espacioEnBytes/1048576);   
+        }
+        System.out.printf("Nombre: %s\nTamano en bytes: %f bytes\nTamano en MB: %.2f M\nFecha ultima modificacion: %s\n",this.file.getName(),espacioEnBytes,espacioEnMegas,sdf.format(this.file.lastModified()));
+    }    
     
     public void mkdir(String nombreDirectorio) throws MiniFileManagerException{
         File directorio= new File(this.file.getAbsolutePath().concat("\\"+nombreDirectorio));
