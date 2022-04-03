@@ -18,7 +18,7 @@ public class MiniTerminal {
     public static void main(String[] args) {
         // TODO code application logic here
         try{
-            MiniFileManager mfm=new MiniFileManager("C:\\Users\\DAW\\Desktop\\DatosParaEjerciciosFicheros-3");
+            MiniFileManager mfm=new MiniFileManager("C:\\Users\\retaz\\Desktop\\DatosParaEjerciciosFicheros-2");
             Scanner sc= new Scanner(System.in);            
             String comando="";
             do {
@@ -43,20 +43,26 @@ public class MiniTerminal {
                         break;
 
                         case "ls":
-                            File[] files=mfm.ls();
+                        	File[] files=null;
+                            if (comandos.length<=1) {
+                            	files=mfm.ls();
+                             }else files=mfm.ls(comandos[1]);                             
+                            
                             for (File f:files) {
                                 System.out.println(f.getName());
                             }
                         break;
 
                         case "ll":
-                            mfm.ll();
+                            if (comandos.length<=1) {
+                            	mfm.ll();
+                             }else mfm.ll(comandos[1]);     
                         break;
 
                         case "info":
                             if (comandos.length<=1) {
-                               mfm.info(); 
-                            }else mfm.info(comandos[1]);                           
+                                mfm.info(); 
+                             }else mfm.info(comandos[1]);                           
                         break;                        
 
                         case "mkdir":
