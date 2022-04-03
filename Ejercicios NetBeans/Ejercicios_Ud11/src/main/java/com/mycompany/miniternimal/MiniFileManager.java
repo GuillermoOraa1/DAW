@@ -86,6 +86,32 @@ public class MiniFileManager {
         return lista;
     }
     
+    
+    public File[] ls(String ruta) throws MiniFileManagerException{
+    	
+    	File fichero= this.identificarRuta(ruta);
+        if (fichero.exists()) {
+            this.file= fichero; 
+         }else{
+             throw new MiniFileManagerException("La ruta indicada no existe linea 42");
+         } 
+    	
+    	File[]lista=this.file.listFiles();
+    	
+        Arrays.sort(lista,new Comparator<File>() {
+        	
+            public int compare(File f1, File f2) {
+                if (f1.isDirectory() && f2.isFile())  return -1;
+                   
+                if (f2.isDirectory() && f1.isFile())  return 1; 
+                     
+                return f1.getName().compareTo(f2.getName());
+
+            }
+        });
+        return lista;
+    }
+      
     public void ll(){
         SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy HH:mm:ss");
         File[] files=this.ls();
@@ -93,6 +119,15 @@ public class MiniFileManager {
             System.out.println("Nombre: "+f.getName()+" Tamano: "+f.length()+" bytes Fecha ultima modificacion: "+sdf.format(f.lastModified()));
         }
     }
+    
+    public void ll(String ruta) throws MiniFileManagerException{
+        SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy HH:mm:ss");
+        File[] files=this.ls(ruta);
+        for (File f:files) {
+            System.out.println("Nombre: "+f.getName()+" Tamano: "+f.length()+" bytes Fecha ultima modificacion: "+sdf.format(f.lastModified()));
+        }
+    }    
+
     
     public void info(){
         SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy HH:mm:ss");
@@ -109,38 +144,14 @@ public class MiniFileManager {
         System.out.printf("Nombre: %s\nTamano en bytes: %f bytes\nTamano en MB: %.2f M\nFecha ultima modificacion: %s\n",this.file.getName(),espacioEnBytes,espacioEnMegas,sdf.format(this.file.lastModified()));
     }
     
-    public static double medirEspacio(File fichero){
-        double espacio=0.0;
-        if (fichero.listFiles().length!=0) {
-            File [] contenido= fichero.listFiles();
-            for (int i = 0; i < contenido.length; i++) {
-                if (contenido[i].isFile())espacio+=contenido[i].length(); 
-                else{
-                   espacio+=MiniFileManager.medirEspacio(contenido[i]);
-                }
-            }
-            return espacio;
-        } 
-        else return fichero.length();
-    }
-    
-    
+  
     public void info(String ruta)throws MiniFileManagerException{
-        if (Pattern.matches("[A-Z]+:.*", ruta)){
-            File fichero=new File(ruta.concat("\\"));
-            if (fichero.exists()) {
-               this.file= fichero; 
-            }else{
-                throw new MiniFileManagerException("La ruta indicada no existe linea 42");
-            }        
-        }else{
-            File fichero=new File(this.file.getAbsolutePath().concat("\\"+ruta));
-            if (fichero.exists()) {
-                this.file= fichero; 
-             }else{
-                 throw new MiniFileManagerException("La ruta indicada no existe linea 49");
-             }        	
-        }
+    	File fichero= this.identificarRuta(ruta);
+        if (fichero.exists()) {
+            this.file= fichero; 
+         }else{
+             throw new MiniFileManagerException("La ruta indicada no existe linea 42");
+         }      	
         
         SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy HH:mm:ss");
         double espacioEnBytes=0.0;
@@ -157,7 +168,7 @@ public class MiniFileManager {
     }    
     
     public void mkdir(String nombreDirectorio) throws MiniFileManagerException{
-        File directorio= new File(this.file.getAbsolutePath().concat("\\"+nombreDirectorio));
+        File directorio= this.identificarRuta(nombreDirectorio);
         if (!directorio.exists()) {
             directorio.mkdir();
         }else{
@@ -167,7 +178,7 @@ public class MiniFileManager {
     }
     
     public void rm (String nombreArchivo)throws MiniFileManagerException{
-        File ficherooriginal= new File(this.file.getAbsolutePath().concat("\\"+nombreArchivo));
+    	File ficherooriginal=this.identificarRuta(nombreArchivo);
         //verifico que el archivo existe y que tengo permisos de lectura, escritura y ejecucion sobre dicho archivo
         if (ficherooriginal.exists()&& ficherooriginal.canWrite()&& ficherooriginal.canExecute()) {
             if(ficherooriginal.isFile()) ficherooriginal.delete();
@@ -184,10 +195,17 @@ public class MiniFileManager {
     }
     
     public void mv(String rutaOrigenArchivo, String rutaDestinoArchivo)throws MiniFileManagerException{
-        File ficheroOriginal= new File(this.file.getAbsolutePath().concat("\\"+rutaOrigenArchivo));
-        File ficheroDestino= new File(this.file.getAbsolutePath().concat("\\"+rutaDestinoArchivo));
+        //File ficheroOriginal= new File(this.file.getAbsolutePath().concat("\\"+rutaOrigenArchivo));
+        //File ficheroDestino= new File(this.file.getAbsolutePath().concat("\\"+rutaDestinoArchivo));
+        
+        File ficheroOriginal=this.identificarRuta(rutaOrigenArchivo);
+        File ficheroDestino=this.identificarRuta(rutaDestinoArchivo);
+        System.out.println(ficheroOriginal.getAbsolutePath());
+        System.out.println(ficheroDestino.getAbsolutePath());
+        
         //aqui muevo el fichero a la ruta de destino en caso de que quiera renombrarlo. Por eso pongo como condicion que el ficheroDestino no exista
         if (!ficheroDestino.exists() && ficheroOriginal.exists() && ficheroOriginal.canWrite() && ficheroOriginal.canExecute()) {
+        	System.out.println("Si entra 1");
             if (ficheroOriginal.renameTo(ficheroDestino)) System.out.println("El archivo ha sido movido a: \n"+ficheroDestino.getPath());
             else throw new MiniFileManagerException("No se ha podido realizar la operacion.");  
         //si el fichero de origen no existe o no tengo los permisos para usarlo, me salta esta excepcion    
@@ -196,7 +214,10 @@ public class MiniFileManager {
         }else{
         	//aqui muevo el fichero a otra ruta pero sin renombrarlo. por eso pongo como condicion que el fichero destino ya exista y verifico que tenga todos los permisos para trabajar sobre ambos ficheros
             if (ficheroOriginal.exists() && ficheroOriginal.canWrite() && ficheroOriginal.canExecute() && ficheroDestino.exists() && ficheroDestino.canWrite() && ficheroDestino.canExecute()) {
-                ficheroDestino= new File(this.file.getAbsolutePath().concat("\\"+rutaDestinoArchivo+"\\"+ficheroOriginal.getName())); // con esto mantengo el nombre original del fichero
+            	System.out.println("Si entra 2");
+            	// con esto mantengo el nombre original del fichero
+                //ficheroDestino= new File(this.file.getAbsolutePath().concat("\\"+rutaDestinoArchivo+"\\"+ficheroOriginal.getName())); 
+            	
                 if (ficheroOriginal.renameTo(ficheroDestino)) System.out.println("El archivo ha sido movido a: \n"+ficheroDestino.getPath());
                 else throw new MiniFileManagerException("No se ha podido realizar la operacion.No tiene los permisos necesarios.");     
             }
@@ -215,6 +236,32 @@ public class MiniFileManager {
                "-> mv <FILE1> <FILE2> : Mueve o renombra ‘FILE1’ a ‘FILE2’.\n\n"+
                "-> help : Muestra una breve ayuda con los comandos disponibles.\n\n"+
                "-> exit : Cierra la Shell.";
+    }
+    
+    public static double medirEspacio(File fichero){
+        double espacio=0.0;
+        if (fichero.listFiles().length!=0) {
+            File [] contenido= fichero.listFiles();
+            for (int i = 0; i < contenido.length; i++) {
+                if (contenido[i].isFile())espacio+=contenido[i].length(); 
+                else{
+                   espacio+=MiniFileManager.medirEspacio(contenido[i]);
+                }
+            }
+            return espacio;
+        } 
+        else return fichero.length();
+    }    
+    
+    public File identificarRuta(String ruta) {
+    	File fichero=null;
+    	if (Pattern.matches("[A-Z]+:.*", ruta)){
+    		fichero= new File(ruta);
+    	}else {
+    		fichero=new File(this.file.getAbsolutePath().concat("\\"+ruta));
+    	}
+    	return fichero;
+    	
     }
     
     /*
