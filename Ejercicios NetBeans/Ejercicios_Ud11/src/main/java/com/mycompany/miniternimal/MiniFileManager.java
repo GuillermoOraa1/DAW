@@ -197,9 +197,12 @@ public class MiniFileManager {
     public void mv(String rutaOrigenArchivo, String rutaDestinoArchivo)throws MiniFileManagerException{
         File ficheroOriginal= new File(this.file.getAbsolutePath().concat("\\"+rutaOrigenArchivo));
         File ficheroDestino= new File(this.file.getAbsolutePath().concat("\\"+rutaDestinoArchivo));
-        
+        //File ficheroOriginal=this.identificarRuta(rutaOrigenArchivo);
+        //File ficheroDestino=this.identificarRuta(rutaDestinoArchivo);
+    
         //aqui muevo el fichero a la ruta de destino en caso de que quiera renombrarlo. Por eso pongo como condicion que el ficheroDestino no exista
         if (!ficheroDestino.exists() && ficheroOriginal.exists() && ficheroOriginal.canWrite() && ficheroOriginal.canExecute()) {
+        	System.out.println("Si entra 1");
             if (ficheroOriginal.renameTo(ficheroDestino)) System.out.println("El archivo ha sido movido a: \n"+ficheroDestino.getPath());
             else throw new MiniFileManagerException("No se ha podido realizar la operacion.");  
         //si el fichero de origen no existe o no tengo los permisos para usarlo, me salta esta excepcion    
