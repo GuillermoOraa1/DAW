@@ -1,0 +1,81 @@
+body{
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+}
+dni{
+    height: 40vh;
+    border: 0.5em solid rgb(0, 0, 255);
+    margin-top: 10vh;
+}
+foto{
+    width: 24%;
+    float: left;
+    height: 12vh;
+    border: 0.5em solid rgb(0, 119, 255);
+}
+nombre{
+    width: 71%;
+    float: right;
+    height: 3vh;
+    border: 0.5em solid rgb(0, 119, 255);
+    font-size: 1em;
+}
+
+primerApellido{
+    width: 71%;
+    float: right;
+    height: 3vh;
+    border: 0.5em solid rgb(0, 119, 255);
+    font-size: 1em;
+}
+
+segundoApellido{
+    width: 71%;
+    float: right;
+    height: 3vh;
+    border: 0.5em solid rgb(0, 119, 255);
+    font-size: 1em;
+}
+
+ciudadNacimiento{
+    width: 48%;
+    float: left;
+    text-align: center;
+    border: 0.5em solid rgb(0, 119, 255);
+}
+provinciaNacimiento{
+    width: 47%;
+    float: right;
+    border: 0.5em solid rgb(0, 119, 255);
+}
+
+fecha{
+    width: 98%;
+    float: right;
+    border: 0.5em solid rgb(0, 119, 255);
+}
+
+sexo{
+
+}
+
+residencia{
+
+}
+
+nacionalidad{
+
+}
+
+provinciaResidencia{
+
+}
+
+ciudadResidencia{
+
+}
+
+domicilio{
+
+}

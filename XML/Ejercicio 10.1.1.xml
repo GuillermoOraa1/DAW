@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="Ejercicio 10.1.1.css"?>
+<body>
+<dni>
+   <foto></foto>
+   <nombre>David</nombre>
+   <primerApellido>Serres</primerApellido>
+   <segundoApellido>Serrano</segundoApellido>
+   <nacimiento>
+       <lugarNacimiento>
+           <ciudadNacimiento>Barcelona</ciudadNacimiento>
+           <provinciaNacimiento>Barcelona</provinciaNacimiento>
+       </lugarNacimiento>
+       <fecha>03-07-1991</fecha>
+   </nacimiento>
+   <sexo>M</sexo>
+   <residencia>
+       <nacionalidad>ESP</nacionalidad>  
+       <provinciaResidencia>Madrid</provinciaResidencia>
+       <ciudadResidencia>Madrid</ciudadResidencia>
+       <domicilio>C. Pez 18 PO1 B</domicilio> 
+   </residencia>
+</dni>
+</body>

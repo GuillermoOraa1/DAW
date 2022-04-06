@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!--Para el DTD <!ELEMENT libro (titulo, autor+, (idioma, traductor?)*)>
+¾cuáles de los siguientes XML no serían válidos? ¾por qué?-->
+<!DOCTYPE libro [
+<!ELEMENT libro (titulo, autor+, (idioma, traductor?)*)>
+<!ELEMENT titulo (#PCDATA)>
+<!ELEMENT autor (#PCDATA)>
+<!ELEMENT idioma (#PCDATA)>
+<!ELEMENT traductor (#PCDATA)>
+]>
+<!-- 1 -->
+<libro>
+    <!--Esto esta mal por que le faltan las etiquetas titulo y autor-->
+</libro>
+
+<!-- 2 -->
+<libro>
+    <!--Esto esta mal por que le falta la etiqueta titulo (aunque si tenga la etiqueta autor)-->
+<autor>....</autor>
+</libro>
+
+<!-- 3 -->
+<libro>
+    <!--Esto esta mal por que le falta la etiqueta titulo (aunque si puede tener multiples etiquetas autor)-->
+<autor>....</autor>
+<autor>....</autor>
+</libro>
+<!-- 4 -->
+<libro>
+    <!--Esto esta mal por que le falta la etiqueta titulo (aunque si puede tener multiples etiquetas autor y entre
+        0 o varias etiquetas idioma(que a su vez pueden llevar 0 o un traductor))-->    
+<autor>....</autor>
+<idioma>....</idioma>
+</libro>

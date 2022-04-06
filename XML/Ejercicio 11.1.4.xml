@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<!--Crea un DTD con la siguiente estructura  DTD<!ELEMENT libro (titulo, autor+, (idioma,traductor?)*)>?-->
+<!DOCTYPE libro [
+<!ELEMENT libro (titulo, autor+, (idioma,traductor?)*)>
+<!ELEMENT titulo (#PCDATA)>
+<!ELEMENT autor (#PCDATA)>
+<!ELEMENT idioma (#PCDATA)>
+<!ELEMENT traductor (#PCDATA)>
+]>

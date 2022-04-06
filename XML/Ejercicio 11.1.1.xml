@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!--¿qué significa el siguiente DTD <!ELEMENT libro (titulo, autor+, (idioma,
+traductor?)*)>?-->
+<!--al menos tiene que haber un titulo, 1 o mas autores y puede haber 0 o varios idiomas, teniendo cada 
+idioma 0 o un traductor-->
+<!DOCTYPE libro [
+ <!ELEMENT libro (titulo, autor+, (idioma,traductor?)*)>
+ <!ELEMENT titulo (#PCDATA)>
+ <!ELEMENT autor (#PCDATA)>
+ <!ATTLIST autor nacionalidad CDATA "ninguna">
+ <!ELEMENT idioma (#PCDATA)>
+ <!ELEMENT traductor (#PCDATA)>
+]>
+<libro>
+    <titulo>titulo</titulo>
+    <autor nacionalidad="ninguna">Marcos</autor>
+    <autor></autor>
+    <idioma></idioma>
+    <idioma></idioma>
+    <traductor></traductor>
+</libro>
+
+<!--Que diferencia hay entre el DTD de arriba y el siguiente? <!ELEMENT libro (titulo, autor+, (idioma, traductor*)*)>-->
+<!--que por cada idioma puede haber 0, 1 o varios traductores, mientras que en el de arriba solo podia haber 
+0 o 1 traductor-->
+
+<!--Para el DTD <!ELEMENT libro (titulo, autor+, (idioma, traductor?)*)> cuales de los siguientes XML no serían 
+validos? ¿por que?-->
