@@ -1,0 +1,73 @@
+
+.tabla1{
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 80%;
+    background-color: brown;  
+    border-collapse: separate;
+}
+
+.tabla1>caption,tfoot{
+    text-align: center;
+    background-color: chartreuse;
+}
+
+.tabla1>thead>tr>th{ 
+    border: 3px solid rgb(243, 6, 6);
+}
+.tabla1>tbody>tr>td{
+    border: 3px solid rgb(22, 6, 243);
+}
+
+.tabla2{
+    margin-top: 2%;
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 80%;
+    border-collapse: collapse;
+}
+.tabla2>thead>tr>th{ 
+    border: 3px solid rgb(243, 6, 6);
+}
+.tabla2>tbody>tr>td{
+    height: 50px;
+    border: 3px solid rgb(22, 6, 243);
+    text-align: center;
+}
+.modulos{
+    margin-top: 5%;
+    margin-left: 10%;
+}
+
+.Programacion{
+    color: rgb(220, 217, 20);
+    background-color: rgb(255, 0, 0);
+}
+
+.Bases_de_datos{
+    color: rgb(167, 220, 20);
+    background-color: rgb(55, 0, 255);
+}
+
+.Sistemas_informaticos{
+    color: rgb(220, 20, 120);
+    background-color: rgb(0, 225, 255);
+}
+
+.Lenguaje_marcas{
+    color: rgb(220, 67, 20);
+    background-color: rgb(0, 255, 149); 
+}
+.FOL{
+    color: rgb(248, 0, 0);
+    background-color: rgb(145, 255, 0);   
+}
+
+.Entornos_desarrollo{
+    color: rgb(0, 35, 236);
+    background-color: rgb(255, 208, 0);   
+}
+
+#pro,#bd,#si,#lm,#fol,#ed{
+    background-color: white;
+}

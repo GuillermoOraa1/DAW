@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;400&family=Nunito:ital,wght@0,200;1,200;1,400&family=Roboto&display=swap');
+
+.bloque1>h1{
+    font-family:  'Festive', Helvetica;
+}
+.bloque1>p{
+    font-family: 'Lato',Helvetica, sans-serif; 
+}
+
+.bloque2>h1{
+    font-family:  'Festive',Helvetica;
+}
+.bloque2>p{
+    font-family: 'Nunito',Helvetica, sans-serif;
+}
+
+.bloque3>h1{
+    font-family:  'Festive',Helvetica;
+}
+.bloque3>p{
+    font-family: 'Roboto',Helvetica, sans-serif;
+}
+

@@ -1,0 +1,55 @@
+.contenedor_principal{
+    background-color: aqua;
+    /*height: 20vh;*/
+    border: 4px solid black;
+    /*los elementos con position:fixed se salen de este contenedor por que se colocan con relacion a la ventana grafica, 
+    no al contenedor*/
+    position:relative;
+    /*los elementos con position:absolute tendrian que estar dentro de un contenedor con position:relative; y que 
+    tuviera un tamaño que pudiesen usar como referencia. Sin embargo, como el ejercicio no nos deja poner al contenedor 
+    ni un "position:relative;" ni darle un tamaño, los elementos se colocaran tomando como elemento padre la 
+    pagina, no el contenedor. Por lo tanto, si quitamos de aqui el "position:relative", "contenedor2" y "contenedor3" 
+    se recolocaran en el centro de la pagina*/
+}
+.contenedor_secundario{ /*esto es una subclase que he usado para dar el mismo tamaño a todos los contenedores*/
+    height: 4vh;
+    width: 5vw;
+}
+.contenedor1{
+    background-color: rgb(230, 48, 16);
+    position: fixed;
+    left: 0; /*si no le ponemos un valor top,left, right... el position:fixed no se activa*/
+}
+.contenedor2{
+    background-color: rgb(91, 16, 230);
+    position:absolute; /*como no nos deja poner un position:relative en el contenedor, utiliza como elemento padre 
+    la propia pagina para fijar su posicion. En principio dicha posicion será la misma para "contenedor2" y 
+    "contenedor3" (ver linea 33) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+.contenedor3{
+    background-color: rgb(230, 16, 177);
+    position:absolute;
+    top:8vh;  /*como usamos en "contenedor2" y "contenedor3" el "position:absolute;", para evitar que ambos ocupen 
+    el mismo espacio ponemos aqui que "contenedor3" aparezca 8vh por debajo de la posicion que le corresponde por defecto*/
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+/*como "contenedor_principal" tiene "position:relative", los "contenedor2" y "contenedor3" aparecen centrados en 
+relacion a "contenedor_principal", no a la pagina.
+
+Dado que  "contenedor_principal" no tiene un tamaño asignado y todo lo que contiene son solo etiquetas <div> (las cuales 
+a su vez se ajustan automaticamente al tamaño de su contenido), dicho "contenedor_principal" aparece sin ancho, pero 
+aunque no podamos ver a "contenedor_principal" veamos los "contenedor2" y "contenedor3" aparecen centrados en relacion 
+a "contenedor_principal"*/
+.contenedor4{
+    background-color: rgb(216, 230, 16);
+    position: fixed;
+    right: 0;
+}

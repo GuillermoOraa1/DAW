@@ -1,0 +1,23 @@
+table tr td{
+    border-collapse:separate;
+    border: 1px solid black;
+}
+table tr:nth-child(1){
+    background-color: rgb(255, 255, 0);
+    color: rgb(255, 108, 71);
+    font-weight: bolder;
+}
+
+table tr>td:first-child{
+    background-color: #747474f6;
+    font-weight: normal;
+    color: black;
+    font-style: italic;
+
+}
+table tr>td:only-child{
+    background-color: #6ddb4b31;
+    font-weight: bolder;
+    font-style: italic;
+    text-align: center;
+}

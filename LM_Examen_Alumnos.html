@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Guillermo">
+<meta name="description" content="Ejercicio examen">
+<meta name="keywords" content="position hoover">
+<link rel="stylesheet" href="estilos.css"  type="text/css">
+<!--hago los efectos con un JS por que no se me ocurre como desencdenar el efecto en ambas etiquetas solo usando css-->
+<script>
+	function mover() {
+		document.getElementById("header").style.transform="rotate(5deg)";
+		document.getElementById("footer").style.transform="rotate(5deg)";
+	}
+	function volver() {
+		document.getElementById("header").style.transform="rotate(0deg)";
+		document.getElementById("footer").style.transform="rotate(0deg)";
+	}
+</script>
+<title>LM_UD1_Ex01</title>
+</head>
+
+<body>
+	<header id="header" onmouseover="mover()" onmouseleave="volver()">
+		<h1>Examen LM</h1>
+	</header>
+	<section>
+		<div>
+			<h2>Capa UNO</h2>
+		</div>
+		<div>
+
+			<div>
+				<h2>DERECHA</h2>
+			</div>
+		
+			<div>
+				<h2>MEDIO</h2>
+			</div>
+			
+			<div>
+				<h2>IZQUIERDA</h2>
+			</div>
+			
+		</div>
+		<div>
+			<h2 >Capa TRES</h2>
+		</div>
+	</section>
+	<!-- Fin capa cuerpo -->
+	<footer id="footer">
+		<h1>
+			La fuente de los textos deberá ser Josefin Sans
+		</h1>
+	</footer>
+</body>
+</html>

@@ -1,0 +1,18 @@
+h1{
+    border-top:4px dotted rgb(124, 13, 228)
+}
+ol>li{
+    margin-left:30px;
+}
+
+ul>li{
+    margin-left:-30px;
+}
+
+ol>li>ul{
+    margin-left:20px;
+}
+
+ul>li>ol{
+    margin-left:-20px;
+}

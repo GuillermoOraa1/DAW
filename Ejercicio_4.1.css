@@ -1,0 +1,46 @@
+.peliculas{
+ list-style-position: inside;
+ list-style-type: decimal-leading-zero;
+}
+
+.canciones{
+    list-style-type:none;
+}    
+
+.canciones>li::before{
+    content:'';
+    display: inline-block;
+    height: 10px;
+    width: 10px;
+    background-image: url(imagenes/logo-favicon.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 10px;
+    margin-right: 5px;
+}
+
+.comidas{
+    margin-left: 2%;
+}
+
+.comidas>dt{
+    font-size: large;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.comidas>dd{
+    font-size: medium;
+    font-family:Cambria, Cochin, Georgia, Times;
+}
+
+.platos {
+    text-decoration: none;
+}
+
+.platos span{ 
+    display:none;
+}
+ 
+.platos:hover span{ 
+    display: block;
+}

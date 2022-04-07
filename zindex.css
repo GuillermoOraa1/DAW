@@ -1,0 +1,24 @@
+body {
+  font-size: 20px;
+}
+
+img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 0;
+}
+
+#uno{
+  position: absolute;
+  left: 10px;
+  top: 60px;    
+  z-index: 2;
+}
+
+#dos{
+  position: absolute;
+  left: 10px;
+  top: 20px;    
+  z-index: -1;
+}

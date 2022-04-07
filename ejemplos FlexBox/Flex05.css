@@ -1,0 +1,30 @@
+#contenedor {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 1000px;
+  border: 1px solid red;
+
+}
+
+#contenedor > div {
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid green;
+  /* width: 200px; */
+  width: 20%;
+}
+
+/* VAMOS A VER PROPIEDADES QUE AFECTAN A UN ÚNICO ELEMENTO */
+
+#contenedor > div:nth-child(3) {
+  align-self: flex-start;
+  /* align-self: center; */
+  /* align-self: baseline; */
+  /* align-self: stretch; */
+
+}
+
+#contenedor > div:nth-child(4) {
+  align-self: flex-end;
+}

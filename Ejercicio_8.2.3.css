@@ -1,0 +1,69 @@
+.contenedor{
+    width: 100%;
+    height:100%;
+    background-color: #1900ff;
+    border: 4px solid black;  
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.contenido{
+    text-align: center;
+    font-size: 1em;   
+    margin:5px;
+}
+
+#contenido1{
+    width: 100%;
+    height: 10vh;
+    background-color: rgb(245, 28, 28);
+    order: 1;
+}
+
+#contenido2{
+    width: 15%;
+    height: 20vh;
+    background-color: rgb(212, 235, 6);
+    text-align: left;
+    order: 3;
+}
+
+#contenido3{
+    width: 15%;
+    height: 20vh;
+    background-color: rgb(216, 6, 235);
+    order: 6;
+}
+
+#contenido4{
+    width: 34%;
+    height: 14vh;
+    background-color: rgb(235, 136, 6);
+    order: 4;
+}
+
+#contenido5{
+    width: 34%;
+    height: 14vh;
+    background-color: rgb(6, 170, 235);
+    order: 5;
+}
+
+/*como utilizo el order y tengo que colocar esto al final, me lo coloca en una nueva fila, ya que los bloques 2,4,5,y 3 forman una sola fila y este debe ir debajo de ellos*/
+#contenido6{
+    width: 69%;
+    height: 6vh;
+    background-color: rgb(98, 104, 107);
+    align-self:baseline;
+    order: 7;
+}
+
+#contenido7{
+    width: 100%;
+    height: 6vh;
+    background-color: rgb(28, 245, 46);
+    order: 2;
+}
+
+

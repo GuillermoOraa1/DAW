@@ -1,0 +1,15 @@
+ol>li:hover{
+    font-size: 2em;
+}
+ul>li:hover{
+    font-style: italic;
+}
+ol>ul>li:hover{
+    font-style: normal;
+}
+ol>li>ul:hover{
+    font-size:0%;
+}
+ol>li>ul>li:hover{
+    font-style:normal;
+}

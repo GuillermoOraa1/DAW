@@ -1,0 +1,61 @@
+h1{
+    color: rgb(250, 128, 114);
+}
+
+ol {
+    list-style-type:upper-latin;
+    list-style-position: outside;  
+    text-transform:uppercase;
+}
+
+ul {
+    list-style-image: url(imagenes/logo-favicon-mini.png);
+    color: rgb(221, 64, 16);
+}
+
+dl> dt,dd{
+    color: #3c008b;
+}
+
+dl>dt{
+    margin-left: 5%;
+}
+
+
+dl~p{
+    color:rgb(187, 187, 3);
+}
+
+p>a{
+    color: rgb(11, 77, 11);
+}
+
+p>a:visited{
+    color: rgb(221, 23, 16);
+}
+
+p+h1{
+    color: rgb(128, 27, 223);
+}
+
+p+h1::first-letter {
+    font-size: 50px;
+}
+
+div>ol{
+    text-transform: capitalize;
+}
+
+div>ul{
+    list-style-image: none;
+    color: rgb(0, 0, 0);
+    list-style-type: disc;
+}
+
+div>ol>li>ul {
+    color: rgb(16, 197, 221);
+}
+
+div>ul>li>ul {
+    color: rgb(0, 58, 184);
+}

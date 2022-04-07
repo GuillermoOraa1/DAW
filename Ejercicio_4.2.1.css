@@ -1,0 +1,23 @@
+ol>li{
+    list-style-type: upper-latin;
+    list-style-position: outside;  
+    text-transform:uppercase;
+}
+
+ul li{
+    list-style-image: url(imagenes/logo-favicon-mini.png);
+    color: rgb(220, 20, 60);
+}
+
+dl> dt,dd{
+    color: #3c008b;
+}
+
+dl>dt{
+    margin-left: 5%;
+}
+
+ul li>img{
+    width: 30px;
+    height: 30px;
+}

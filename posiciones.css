@@ -1,0 +1,78 @@
+body
+{
+  background-color: red;
+}
+
+#contenedor
+{
+  background-color: white;
+  width: 800px;
+  height: 1600px;
+  margin: 40px 40px;
+}
+
+#fijo
+{
+  /* observa que el posicionamiento fijo saca el bloque del flujo html y coloca el elemento
+    con respecto a la ventana del navegador y no con respecto al documento (si desplazamos
+    la ventana hacia abajo el div "baja" con nosotros*/
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  background-color: blue;
+  width: 200px;
+  height: 300px;
+}
+
+#pegajoso
+{
+  /* Observa que el comportamiento es algo como absoluto al principio y fijo a medida que vamos 
+    bajando.
+    También se diferencia del anterior en que SIEMPRE estará contenido dentro del elemento padre
+    en la jerarquía, independientemente de que tenga posicionamiento estático o no . */
+  position: sticky;
+  top: 20px;
+  left: 100px;
+  background-color: olive;
+  width: 200px;
+  height: 300px;
+}
+
+#absoluto
+{
+  /* observa que el posicionamiento absoluto saca el bloque del flujo html */
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: yellow;
+  width: 200px;
+  height: 300px;
+}
+
+#estatico
+{
+  /* observa que el posicionamiento estático NO saca el bloque del flujo html */
+  position: static;
+  
+  /*las posiciones no le afectan porque se coloca donde le corresponde segœn su situación en el html */
+  top: 50px;
+  right: 10px;
+  background-color: orange;
+  width: 200px;
+  height: 300px;
+  
+}
+
+#relativo
+{
+  /* observa que el posicionamiento relativo NO saca el bloque del flujo html (está 20 px por debajo del div estático
+      que es la posición que le correspondería) pero coloca el elemento con respecto al bloque que lo contiene 
+      (en este caso el div "contenedor")*/
+  position: relative;
+  top: 20px;
+  /* por tener posicionamiento estático se centra con respecto al bloque que lo contiene */
+  margin: 0px auto;
+  background-color: green;
+  width: 200px;
+  height: 300px;
+}

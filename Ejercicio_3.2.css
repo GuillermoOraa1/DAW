@@ -1,0 +1,69 @@
+h1 {
+    color:rgb(111, 0, 255);
+    
+  }
+
+h2 {
+  color:rgb(255, 17, 0);
+    
+  }
+
+h3 {
+    color:rgb(255, 166, 0);
+    
+  }
+
+p {
+  font-family: 'Indie Flower', cursive;
+}
+
+dl:first-child{
+  color:#8b0000;
+}
+
+img{
+  margin-top: 10px;
+}
+.cita{
+  font-size: 20px;
+  color:rgb(111, 0, 255);
+}
+
+.comentarios{
+  border-style: dotted;
+  width: 25%;
+}
+
+.usuario{
+  text-decoration: double;
+}
+
+.fecha{
+  color:rgb(255, 17, 0);
+}
+
+.direccion{
+  text-align: center;
+  padding-top: 2.5%;
+  padding-bottom: 2.5%;
+}
+.direccion>a:link{
+  color:rgb(102, 255, 0);
+  font-size: 40px;
+}
+
+.direccion>a:hover{
+  color:rgb(255, 0, 128);
+}
+
+.direccion>a:visited{
+  color:rgb(229, 255, 0);
+}
+
+.direccion>a:focus{
+  color:rgb(255, 0, 0);
+}
+
+.direccion>a:active{
+  color:rgb(0, 4, 255);
+}

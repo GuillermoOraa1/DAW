@@ -1,0 +1,82 @@
+.enlaces{
+    font-family: 'Indie Flower', Helvetica, cursive;
+    font-size: large;
+    font-weight: bolder;
+    display: flex;
+    justify-content: center;
+}
+
+.enlaces a{
+    width: 10%;
+    text-decoration: none;
+    text-align: center;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+.paso1:link{
+    color: rgba(0, 0, 255, 0.904)
+}
+
+.paso1:focus{
+    color: rgba(139, 0, 0, 0.945);
+}
+
+.paso1:hover{
+    color: rgba(255, 208, 0, 0.904)
+}
+
+.paso1:active{
+    color: rgba(255, 0, 157, 0.904)
+}
+
+.paso1:visited{
+    color: rgb(3, 192, 28)
+}
+
+
+.paso2:link, .paso2:visited{
+    color: rgba(0, 0, 255, 0.904)
+}
+
+.paso2:focus,.paso2:hover,.paso2:active{
+    color: rgba(139, 0, 0, 0.945);
+}
+
+.cabecera h2{
+    display: flex;
+    justify-content: center;
+}
+
+.cabecera p{
+    display: flex;
+    justify-content: center;
+}
+
+.cabecera>figure>a{
+    display: flex;
+    justify-content: center;
+}
+
+.cabecera>figure>figcaption{
+    display: flex;
+    justify-content: center;
+}
+
+.texto{
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    text-align: justify;
+    word-wrap: break-word;
+}
+
+.texto p:hover{
+    font-size: large;
+}
+
+.texto>a{
+    font-family: 'Indie Flower', Helvetica, cursive;
+    font-size: large;
+    font-weight: bolder;
+}

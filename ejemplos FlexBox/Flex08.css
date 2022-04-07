@@ -1,0 +1,38 @@
+#contenedor {
+  display: flex;
+  flex-direction: row;
+  /* flex-wrap: wrap; */
+  height: 1000px;
+  border: 1px solid red;
+
+}
+
+#contenedor > div {
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid green;
+  /* width: 300px; */
+}
+
+/* EL USO DE LA SIGUIENTE PROPIEDAD ES COMPLEJO ASÍ QUE SE SIMPLIFICA.
+    BÁSICAMENTE CONSIDERAREMOS LA PAREJA AUTO-CONTENT COMO LO MISMO
+    Y LOS PORCENTAJES. */
+#contenedor > div:nth-child(3) {
+    /* SE ESTABLECERÁ UN TAMAÑO AUTOMÁTICAMENTE. EL RESTO DE PROPIEDADES
+    DE FLEX-BOX PUEDEN TENER UN GRAN IMPACTO CON ESTA CONFIGURACIÓN */
+    flex-basis: auto;
+}
+
+#contenedor > div:nth-child(4) {
+    /* SE AJUSTA AL CONTENIDO AUTOMÁTICAMENTE, ES DIFÍCIL DIFERENCIARLO DE LO
+    ANTERIOR */
+    flex-basis: content;
+}
+
+/* PUESTO AQUÍ DETRÁS PARA PODER PROBAR CORRECTAMENTE */
+#contenedor > div:nth-child(2) {
+    /* ANCHURA DETERMINADA EN PORCENTAJE CON REFERENCIA A SU CONTENEDOR FLEX
+    EXCEPTO SI ESTE NO TIENE ANCHURA ESPECIFICADA, QUE ENTONCES SERÁ IGUAL QUE
+    CONTENT */
+    flex-basis: 40%;
+}

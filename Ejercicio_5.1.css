@@ -1,0 +1,126 @@
+
+body{
+    /*ponemos de color negro el background del body para que se vea el margin que le dejamos a "bloques"*/
+    background-color: rgb(0, 0, 0);
+}
+
+.bloques{
+    /*con esto vemos el margin, que aparece negro*/
+    margin-left: 2%;
+    margin-right: 2%;
+    /*ponemos un padding azul que separe los elementos que contiene "bloques" del borde de "bloques"*/
+    padding: 5%;
+    background-color: rgb(39, 180, 236);
+
+    
+}
+
+.clase1{
+    /*le decimos que este bloque "clase1" ocupe el 90% del ancho de "bloques"*/
+    width: 90%;
+
+   /*centramos el bloque "clase2" haciendo que sus margenes izquierdo y derecho se ajusten de forma automatica 
+    con respecto a la distancia a los bordes de "bloques"*/
+    margin-left: auto;
+    margin-right: auto;
+
+    /*usamos display:flex para centrar el contenido que hay dentro de "clase1"*/
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+    /*creamos un border con esquinas redondeadas, un ancho de 5px y con sombreado gris*/
+    border-radius: 4%;
+    border-width: 5px;
+    border-top-style: dotted; border-right-style: solid; border-bottom-style: dotted; border-left-style: solid;
+    /*ponemos a la caja un sombreado gris con un ancho de 5px en la parte inferior y 10px en la lateral*/
+    box-shadow: 10px 5px grey;
+
+    background-color: rgb(236, 39, 78);
+    /*overflow: scroll;*/
+
+}
+
+.clase1>p{
+    /*le decimos que cada tag "p" tenga un tamaño correspondiente al 25% del tamaño de "clase1" */
+    width: 25%;
+    /*ponemos un margin para separar cada tag "p" del borde de "clase1"*/
+    margin-left: 2%;
+    margin-right: 2%;
+    /*como no le ponemos un padding, el texto aparecerá pegado a los bordes*/
+
+    /*les ponemos un borde a cada tag "p"*/
+    border-style: solid;
+
+    background-color:rgb(243, 236, 169);
+    color: rgb(6, 6, 209);
+    text-align: center;    
+}
+
+.clase2{
+    /*le decimos que este bloque "clase2" ocupe el 80% del ancho de "bloques"*/
+    width: 80%;
+    
+    /*centramos el bloque "clase2" haciendo que sus margenes izquierdo y derecho se ajusten de forma automatica 
+    con respecto a la distancia a los bordes de "bloques"*/
+    margin-left: auto;
+    margin-right: auto;
+
+    /*separamos "clase2" del bloque "clase1" que esta en la parte superior*/
+    margin-top: 2%;
+
+    /*hacemos que el borde de "clase2" tenga un acho de 5px, sea rojo y hecho con puntos. 
+    A diferencia que con "clase1" lo hacemos con 3 instrucciones diferentes pero conseguimos
+    el mismo resultado*/
+    border-width: 5px;
+    border-style: dotted;
+    border-color: rgb(219, 10, 10);
+    /*configuramos background-image para que muestre un fondo granulado en diagonal hacia la derecha*/
+    background-image: linear-gradient(to right, rgb(0, 247, 255) , rgb(0, 255, 64));
+}
+.clase2>p{
+    /*separamos el tag "p" de los bordes de "clase2" para que se muestre el fondo granulado*/
+    margin:2%;
+    /*separamos el texto de los bordes del tag "p" de forma que, a diferencia de lo que ha 
+    pasado con ".clase1>p" no aparezca pegado a los bordes*/
+    padding: 2%;
+
+    border: 5px solid black;
+
+    background-color: rgb(243, 236, 169);
+}
+
+.clase3{
+  /*separamos "clase2" del bloque "clase1" que esta en la parte superior*/
+  margin-top: 2%;
+  /*le damos una altura fija en px al bloque ".clase3" para que la imagen de fondo no
+  aparezca muy pequeña, ya que por defecto la altura del bloque se ajusta automaticamente
+  al texto que le pongamos*/
+  height: 280px;
+
+  border:30px double rgb(4, 148, 11);
+  outline-color: red;
+  outline-width: 10px;
+
+  /*ponemos de fondo una imagen*/
+  background-image: url(imagenes/loro.jpg);
+  /*le decimos que el background debe ajustarse automaticamente al tamaño del contenedor*/ 
+  background-size: contain;
+  /*le decimos que no queremos que se repita la imagen que hemos puesto como background, ya
+  que como le sobra espacio en el contenedor por defecto intentara repetir la imagen*/
+  background-repeat: no-repeat; 
+  /*centramos el background*/
+  background-position: center; 
+  /*le damos un color a todo el espacio de background que nos sobra*/
+  background-color: rgb(21, 190, 21);
+  background-blend-mode:luminosity;
+}
+
+.clase3>p{
+    /*ponemos el texto en rojo, con la fuente mas gruesa y el tamaño mayor posible*/
+    font-size: larger;
+    font-weight: bolder;
+    color: rgb(220, 20, 20);
+    text-align: center;
+    padding-top: 2%;
+}

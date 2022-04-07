@@ -1,0 +1,74 @@
+#contenedor{ 
+    border: 2px solid rgb(230, 13, 13);
+    margin: 1%;
+    padding: 2%;
+    display:flex;
+    flex-direction:column-reverse;
+}
+
+
+
+#contenedor > div:nth-child(3){
+    height: 30vh;
+    flex-wrap:wrap;
+    justify-content:left;
+    align-content: space-around;
+}
+
+#contenedor > div:nth-child(2){
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    padding-bottom: 5%;
+}
+
+#contenedor > div:nth-child(2) > div:nth-child(3){
+    align-self: flex-end;
+}
+
+#contenedor > div:nth-child(2) > div:nth-child(2){
+    align-self: center;
+}
+
+#contenedor > div:nth-child(2) > div:nth-child(1){
+    height: auto;
+    align-self: stretch;
+}
+
+#contenedor > div:nth-child(1){
+    align-items: flex-start;  
+}
+
+#contenedor > div:nth-child(1) > div:nth-child(1){
+    height: auto;
+    flex-grow: 0;
+    flex-shrink:0;
+}
+#contenedor > div:nth-child(1) > div:nth-child(2){
+    height: auto;
+    flex-grow: 1;
+    flex-shrink:1;
+    align-self: stretch;
+}
+#contenedor > div:nth-child(1) > div:nth-child(3){
+    height: auto;
+    flex-grow: 2;
+    flex-shrink:2;
+    align-self: stretch;
+}
+
+.bloque{
+    border: 2px solid rgb(38, 230, 13);
+    margin: 1%;
+    height: 20vh;
+    display: flex;
+    
+}
+
+.minibloque{
+    border: 2px solid rgb(17, 13, 230);
+    padding: 2vw;
+    margin: 2vw;
+    height: 2vh;
+    display: flex;
+    justify-content: left;
+}

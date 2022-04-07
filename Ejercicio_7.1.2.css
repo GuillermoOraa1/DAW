@@ -1,0 +1,43 @@
+.contenedor_principal{
+    background-color: aqua;
+    /*height: 16vh;*/
+    /*no hace falta indicarle un altura al contenedor, ya que trabajamos con positions relative*/
+    border: 4px solid black;
+}
+.contenedor_secundario{
+    height: 4vh;
+}
+.contenedor1{
+    background-color: rgb(230, 48, 16);
+    /*position:relative;*/ /*como siguen el flujo normal del documento, en ninguno de los 3 primeros bloques div hace
+     falta trabajar con el "position", solo con el "float" para ver como se posicionaran los unos en relación a los otros*/
+    display: inline-block; 
+    /*no hace falta poner el float:left por que ya lo tiene por defecto al ser el 1º elemento*/
+    width:66.70%;
+}
+.contenedor2{
+    background-color: rgb(91, 16, 230);
+    /*position:relative;*/ 
+    display:block;
+    float:left;
+    width:33.33%;
+}
+.contenedor3{
+    background-color: rgb(230, 16, 177);
+    /*position:relative;*/
+    float:right;
+    width:33.33%;
+}
+.contenedor4{
+    /*como en este contenedor si queremos modificar la posicion que tiene por defecto en relacion a los otros elementos 
+    de la pagina, aqui si usamos el "position". Usamos el "position:relative" por que queremos tomar como punto de origen 
+    la posicion que tendria dicho elemento en el flujo normal de elementos de la pagina*/
+    background-color: rgb(216, 230, 16);
+    position:relative;
+    left:33.33%;
+    width:33.33%;
+    /* esta seria la modificacion que nos pide el 2º punto
+    width:100%;
+    clear: right;*/
+    /*con el "clear:right" este elemento se empuja debajo de los elementos flotantes derechos (en este caso el "contenedor3")*/
+}

@@ -1,0 +1,32 @@
+#contenedor {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 1000px;
+  border: 1px solid red;
+
+}
+
+#contenedor > div {
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid green;
+  width: 200px;
+}
+
+#contenedor > div:nth-child(3) {
+  order: -1;
+  /* order: 0; */
+  
+  /* ESTE ÚLTIMO PARECERÁ RARO, PERO SI TIENES EN CUENTA QUE EL VALOR POR DEFECTO
+    ES CERO, VERÁS QUE TODOS LOS DEMÁS TIENEN CERO ASÍ QUE SÍ ESTARÁ MÁS CLARO. */
+  /* order: 2; */
+}
+
+/* SI ELIGES LA ÚLTIMA OPCIÓN DEL ANTERIOR Y DESCOMENTAS ESTE, VERÁS QUE AHORA
+  TODO TIENE MÁS SENTIDO: SI QUIERES COLOCAR VARIOS ELEMENTOS TENDRÁS QUE IR
+  DÁNDOLES UN NÚMERO DE ORDEN A TODOS LOS AFECTADOS. */
+/*#contenedor > div:nth-child(4) {
+  order: 5;
+}
+*/

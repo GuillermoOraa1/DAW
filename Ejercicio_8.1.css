@@ -1,0 +1,41 @@
+#bloque1{
+    background-color: hsl(0, 90%, 48%);
+    width:30vw;
+    height: 20vh;
+}
+
+#bloque2{
+    background-color: hsl(244, 59%, 41%);
+    width:30vh;
+    height:20vw;
+}
+
+
+
+@media only screen and (orientation: landscape){
+    #bloque3{
+        background-color: hsl(108, 59%, 41%);
+        width:30vw;
+        height: 20vh;
+    }
+    #bloque4{
+        background-color: hsl(320, 59%, 41%);
+        width:30vw;
+        height: 200px;
+    }
+}
+
+@media only screen and (orientation:portrait){
+    #bloque3{
+        background-color: hsl(108, 59%, 41%);
+        width:30vh;
+        height: 20vw;
+    }
+    #bloque4{
+        background-color: hsl(320, 59%, 41%);
+        width:30vh;
+        height: 200px;
+    }
+}
+
+

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Guillermo">
+    <meta name="description" content="Ejercicio con formularios">
+    <meta name="keywords" content="forms, formularios">
+    <link rel="stylesheet" href="Ejercicio_7.3.css" type="text/css">
+    <title>Ejercicio 7.3</title>
+</head>
+<body>
+    <div class=contenedor>
+        <form action="http://servidorwebclara.ga" method="get">
+
+            <h3>Formulario de registro de los datos de una persona</h3>
+
+            <fieldset>
+                <legend>Datos principales de una persona</legend>
+
+                <p>
+                    <label for="Nombre">Nombre: </label><!--Que el for coincida con el id del input permite que el texto se pueda convertir en foco para la seleccion de una accion -->
+                    <input type="text" id="Nombre" name="nombre" size="40" pattern="[a-zA-Z ]{2,100}*" placeholder="Escribe aqui tu nombre" autofocus required>
+                    <span></span>
+                </p>
+
+                <p>
+                    <label for="edad">Edad: </label>
+                    <input type="number" id="edad" name="edad" min="12" max="99" placeholder="Edad" required>
+                    <span></span>
+                </p>
+                 
+                <p> 
+                    <label for="nacimiento">Fecha de nacimiento: </label>
+                    <input type="date" id="nacimiento" name="fecha" required>
+                    <span></span>
+                </p>
+                <p>
+                    <label>Sexo: </label><!--Meter el input dentro del label permite que el texto se pueda convertir en foco para la seleccion de una accion-->
+                        <input type="radio" name="sexo" value="h" required> Hombre
+                        <input type="radio" name="sexo" value="m" required checked> Mujer  
+                    <span></span>        
+                </p>
+                <p>
+                    <label for="telefono">Telefono: </label> 
+                    <input id="telefono" type="tel" name="telefono" pattern="[0-9]{9}"> 
+                    <span></span>
+                </p>
+                <p>
+                    <label for="email">Correo electronico: </label>
+                    <input id="email" type="email" name="email" required>
+                    <span></span>
+                </p>
+            </fieldset>  
+            
+            <fieldset>
+                <legend>Descripcion de la persona: </legend>
+                <p>
+                    <label for="descripcion">Describe tu personalidad</label>
+                </p>
+                <P>
+                    <textarea name="descripcion_personal" id="descripcion" cols="80" rows="5" maxlength="250">Hay que escribir aquí</textarea>
+                </P>
+                <p>
+                    <label>Indique que deportes practica: </label>
+                    <input type="checkbox" name=”opciones” value="bici" checked> Bici
+                    <input type="checkbox" name=”opciones” value="correr"> Correr
+                    <input type="checkbox" name=”opciones” value="pesas"> Pesas
+                </p>
+               
+                <p>
+                    <label for="cars">Indique el tipo de coche que conduce: </label>
+                    <select name="cars" id="cars" >
+                        <optgroup label="Swedish Cars">
+                            <option value="volvo">Volvo</option>
+                            <option value="saab">Saab</option>
+                        </optgroup>
+                        <optgroup label="German Cars">
+                            <option value="mercedes">Mercedes</option>
+                            <option value="audi">Audi</option>
+                        </optgroup>
+                    </select>
+                </p>
+
+                <p>
+                    <label for="sabores">Ingrese su sabor favorito: </label>
+                    <input type="text" name="sabores" list="sabores" />
+                    <datalist id="sabores">
+                        <select name="sabores" ></select>
+                            <option value="Chocolate">
+                            <option value="Coconut">
+                    </datalist>
+                </p>
+
+                <p><label for="color_pelo">Indique su tono de pelo: </label><input type="color" id="color_pelo" name="color_pelo" value="#f3e411"></p>
+                <p>
+                    <label>Indique su nivel de satisfaccion (de 1 a 10, de 2 en 2): </label>
+                    <input type="range" name="rango" min="1" max="10" step="2" value="4" list="niveles">
+                    <datalist id="niveles">
+                        <option value="0"></option>
+                        <option value="2"></option>
+                        <option value="4"></option>
+                        <option value="6"></option> 
+                        <option value="8"></option>
+                        <option value="10"></option>  
+                    </datalist>
+                </p>
+            </fieldset>
+
+            <fieldset>
+                <legend>Datos de tiempo</legend>
+                <label>Escriba aqui un dia y hora para una cita para recoger su certificado: </label>
+                <p>
+                    <input type="date">
+                    <input type="time">
+                </p>
+                <p><label for="avatar">Introduce aqui una foto de tu avatar: </label></p>
+                <p><input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg" multiple></p>       
+            </fieldset>
+            <br>
+            
+            <P>
+                <textarea name="avisos" id="avisos" cols="30" rows="5" readonly>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. 
+                </textarea>
+            </P>
+            <p>
+                <label>¿Conforme? </label>
+                <input type="radio" name="conformidad" value="si" required checked> Si
+                <input type="radio" name="conformidad" value="no" required> No
+            </p>
+            <br>
+       
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Borrar">
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="alumnos,DAW,asignatura,hotel">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5.2</title>
+    <link rel="stylesheet" href="Ejercicio_5.2.css" type="text/css">
+</head>
+<body>
+    <table class="tabla1">
+        <!--Usamos "<caption>" para darle un título descriptivo a las tablas-->
+        <caption>Alumnos de 1º curso</caption>
+        <!--Usamos "<thead>" para crear un bloque formado por celdas que servirán como encabezado de los campos de la tabla -->
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>1º apellido</th>
+                <th>2º apellido</th>
+                <th>Lugar de residencia</th>
+            </tr>
+        </thead>
+        <!--Usamos "<tbody>" para crear un bloque que contenga el cuerpo de la tabla, los distintos registros de la tabla-->
+        <tbody>
+            <tr>
+                <td>Nombre1</td>
+                <td>Primer apellido1</td>
+                <td>Segundo apellido1</td>
+                <td>Lugar de residencia1</td>
+            </tr>
+            <tr>
+                <td>Nombre2</td>
+                <td>Primer apellido2</td>
+                <td>Segundo apellido2</td>
+                <td>Lugar de residencia2</td>
+            </tr>
+            <tr>
+                <td>Nombre3</td>
+                <td>Primer apellido3</td>
+                <td>Segundo apellido3</td>
+                <td>Lugar de residencia3</td>
+            </tr>
+            <tr>
+                <td>Nombre4</td>
+                <td>Primer apellido4</td>
+                <td>Segundo apellido4</td>
+                <td>Lugar de residencia4</td>
+            </tr>
+            <tr>
+                <td>Nombre5</td>
+                <td>Primer apellido5</td>
+                <td>Segundo apellido5</td>
+                <td>Lugar de residencia5</td>
+            </tr>
+            <tr>
+                <td>Nombre6</td>
+                <td>Primer apellido6</td>
+                <td>Segundo apellido6</td>
+                <td>Lugar de residencia6</td>
+            </tr>
+            <tr>
+                <td>Nombre7</td>
+                <td>Primer apellido7</td>
+                <td>Segundo apellido7</td>
+                <td>Lugar de residencia7</td>
+            </tr>
+            <tr>
+                <td>Nombre8</td>
+                <td>Primer apellido8</td>
+                <td>Segundo apellido8</td>
+                <td>Lugar de residencia8</td>
+            </tr>
+            <tr>
+                <td>Nombre9</td>
+                <td>Primer apellido9</td>
+                <td>Segundo apellido9</td>
+                <td>Lugar de residencia9</td>
+            </tr>
+            <tr>
+                <td>Nombre10</td>
+                <td>Primer apellido10</td>
+                <td>Segundo apellido10</td>
+                <td>Lugar de residencia10</td>
+            </tr>
+        </tbody>
+        <!--Usamos <tfoot> para crear un bloque de filas <tr> que representa a la sección de pie de una tabla-->
+        <tfoot>
+            <tr>
+                <td colspan="4">Escuela europea de artes gráficas y escénicas</td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <div class="modulos">
+        <dl id="pro" class="Programacion">
+            <dt>Programación</dt>
+            <dd>Descripción de la asignatura</dd>
+        </dl>
+        <dl id="bd" class="Bases_de_datos">
+            <dt>Bases de datos</dt>
+            <dd>Descripción de la asignatura</dd>
+        </dl>
+        <dl id="si" class="Sistemas_informaticos">
+            <dt>Sistemas informáticos</dt>
+            <dd>Descripción de la asignatura</dd>
+        </dl>
+        <dl id="lm" class="Lenguaje_marcas">
+            <dt>Lenguaje de marcas</dt>
+            <dd>Descripción de la asignatura</dd>
+        </dl>
+        <dl id="fol" class="FOL">
+            <dt>FOL</dt>
+            <dd>Descripción de la asignatura</dd>
+        </dl>
+        <dl id="ed" class="Entornos_desarrollo">
+            <dt>Entornos de Desarrollo</dt>
+            <dd>Descripción de la asignatura</dd>
+        </dl>
+    </div>
+
+    <table class="tabla2">
+        <caption>DAW 1</caption>
+        <thead>
+            <th>Horas</th>
+            <th>Lunes</th>
+            <th>Martes</th>
+            <th>Miercoles</th>
+            <th>jueves</th>
+            <th>Viernes</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>15:30</td>
+                <td class="Programacion" rowspan="2">Programación</td>
+                <td class="Programacion" rowspan="2">Programación</td>
+                <td class="Sistemas_informaticos" rowspan="2">SisInf</td>
+                <td class="Programacion" rowspan="2">Programación</td>
+                <td class="FOL" rowspan="2">ForYOriLab</td>
+            </tr>
+            <tr>
+                <td>16:25</td>
+            </tr>
+            <tr>
+                <td>17:20</td>
+                <td class="Sistemas_informaticos">SisInf</td>
+                <td class="Entornos_desarrollo">EntornoDeDesarrollo</td>
+                <td class="Lenguaje_marcas">LenguajeMarcas</td>
+                <td class="Sistemas_informaticos">SisInf</td>
+                <td class="Lenguaje_marcas">LenguajeMarcas</td>
+            </tr>
+            <tr>
+                <td>18:15</td>
+                <td colspan="5">RECREO</td>
+            </tr>
+            <tr>
+                <td>18:45</td>
+                <td class="Sistemas_informaticos">SisInf</td>
+                <td class="FOL">ForYOriLab</td>
+                <td class="Lenguaje_marcas">LenguajeMarcas</td>
+                <td class="Sistemas_informaticos">SisInf</td>
+                <td class="Lenguaje_marcas">LenguajeMarcas</td>
+            </tr>
+            <tr>
+                <td>19:40</td>
+                <td class="Bases_de_datos" rowspan="2">BasesDatos</td>
+                <td class="Bases_de_datos" rowspan="2">BasesDatos</td>
+                <td class="Entornos_desarrollo" rowspan="2">EntornoDeDesarrollo</td>
+                <td class="Bases_de_datos" rowspan="2">BasesDatos</td>
+                <td class="Programacion" rowspan="2">Programación</td>
+            </tr>
+            <tr>
+                <td>20:35</td>
+            </tr>
+        </tbody>
+
+    </table>
+    
+</body>
+</html>

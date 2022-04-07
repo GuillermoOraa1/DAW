@@ -1,0 +1,87 @@
+/*esto tendria que ponerse abajo, pero como es el unico selector que usa clases lo pongo aqui para que no estorbe*/
+.contenedor{
+    margin-left: 30%;
+}
+
+h3{
+    color: rgb(238, 11, 79);
+    font-size: 2em;
+    text-transform: uppercase;
+    text-align: center;
+    width: 50%;
+    margin: auto;
+    transform: translate(-50%,-0%);
+}
+
+fieldset{
+    background-color: rgb(161, 185, 230);
+    border: 3px solid rgb(0, 0, 255);
+    border-radius: 10%;
+    width: 50%;
+    margin: auto;
+    transform: translate(-50%,-0%);
+}
+legend{
+    font: 20px Tahoma;
+    font-weight: bolder;
+    color: rgb(12, 65, 238);
+}
+label{
+    font-family: cursive;
+    font-weight: bolder;
+    color: rgb(231, 16, 59);
+}
+
+fieldset:nth-child(3){
+    margin-left: 34%;
+}
+
+/*hacemos que las etiquetas input aparezcan bien indentadas*/
+fieldset:nth-child(2) > p > label{
+    display: inline-block;
+    width: 30%;
+}
+fieldset:nth-child(3) > p > label{
+    display: inline-block;
+    width: 50%;
+}
+
+/*centramos el textarea sin usar el selector de etiqueta*/
+fieldset:nth-child(3) > p:nth-child(3){  
+    display: flex;
+    justify-content: center;
+}
+
+/*usamos selectores por tipo de input, solo para probar*/
+fieldset:nth-child(4) > p:nth-child(3) > input[type="date"] {
+    margin:auto;
+}
+
+fieldset:nth-child(4) > p:nth-child(3) > input[type="time"] {
+    margin-left: 3%;
+}
+
+/*usamos selectores para causar efectos segun se cumplan o no las condiciones del formulario*/
+
+input:required + span::after { 
+    content: "*";
+    margin-left: 1%; 
+    font-family: cursive;
+    font-weight: bolder;
+    color: rgb(231, 16, 59);
+}
+
+
+input[type="tel"]:invalid + span::after { 
+    content: "Escriba un número válido."; 
+    font-family: cursive;
+    font-weight: bolder;
+    color: rgb(231, 16, 59);
+}
+
+
+input[type='number']:out-of-range + span::after { 
+    content: "Mínimo 12, máximo 99";
+}
+
+

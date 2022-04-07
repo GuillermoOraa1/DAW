@@ -1,0 +1,37 @@
+#contenedor {
+  display: flex;
+  flex-direction: row;
+  /* flex-wrap: wrap; */
+  height: 1000px;
+  border: 1px solid red;
+
+}
+
+#contenedor > div {
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid green;
+  width: 200px;
+}
+
+/* EL NÚMERO EN FLEX-GROW ES UN FACTOR DE CRECIMIENTO USANDO EL ESPACIO DISPONIBLE,
+  POR LO QUE EL TAMAÑO (O CUÁNTO CRECE) DEPENDERÁ DEL ESPACIO EN BLANCO RESTANTE.
+  PODRÍA LLEGAR A NO CRECER
+  EL SEGUNDO DEBERÍA CRECER EL DOBLE QUE EL PRIMERO.
+  EL VALOR POR DEFECTO ES CERO Y HACE QUE NO CREZCAN.
+  */
+#contenedor > div:nth-child(3) {
+    /* CRECIMIENTO NORMAL */
+    flex-grow: 1;
+}
+
+#contenedor > div:nth-child(4) {
+    /* CRECIMIENTO TRIPLE */
+    flex-grow: 3;
+}
+
+/* PUESTO AQUÍ DETRÁS PARA PODER PROBAR CORRECTAMENTE */
+#contenedor > div:nth-child(2) {
+    /* SIN CRECIMIENTO, VALOR POR DEFECTO */
+    flex-grow: 0;
+}

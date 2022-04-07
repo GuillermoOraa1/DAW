@@ -1,0 +1,42 @@
+#contenedor {
+  display: flex;
+  flex-direction: row;
+  /* flex-wrap: wrap; */
+  height: 1000px;
+  border: 1px solid red;
+
+}
+
+#contenedor > div {
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid green;
+  width: 200px;
+}
+
+/* EN LA ESPECIFICACIÓN DE LAS 3 ANTERIORES PROPIEDADES YA SE NOS INDICA QUE
+  ES MEJOR USAR LA ABREVIATURA FLEX PORQUE ESTABLECERÁ EL VALOR DE TODO LO
+  NO ESPECIFICADO A UN VALOR CONVENIENTE.
+  LAS OPCIONES SON:
+  - NONE
+  - <valor-grow> <valor-shrink>? <valor-basis>?
+  - <valor-basis>
+
+  EL VALOR POR DEFECTO ES:
+  0 1 auto
+
+  */
+#contenedor > div:nth-child(3) {
+    flex: 1 0 auto;
+}
+
+#contenedor > div:nth-child(4) {
+    /* GRAN IMPACTO EN LAS ALTERACIONES */
+    flex: 0 5 40%;
+}
+
+/* PUESTO AQUÍ DETRÁS PARA PODER PROBAR CORRECTAMENTE */
+#contenedor > div:nth-child(2) {
+  /* SIN IMPACTO */
+    flex: none;
+}

@@ -1,0 +1,81 @@
+
+body{
+    background-color: #666666;
+    color:  #f2f2f2 ;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body p{
+    text-align: justify;
+    width: 75%;
+    text-align-last: center;
+}
+
+figure{
+    text-align: center;
+}
+
+footer>p{
+    width: 100%;
+    text-align-last: left;
+}
+
+footer>p:nth-child(2){
+    text-transform: uppercase;
+    text-decoration: line-through;
+}
+
+/*NO SE POR QUE ESTO NO FUNCIONA*/
+section>article>p:nth-child(1){
+    background-color: rgb(150, 151, 153);
+}
+
+.descripcionAve{
+    margin: 3% 15% 1% 15%;
+}
+.descripcionAve>p{
+    width: 100%;
+    padding-bottom: 2%;
+}
+.cabecera{
+    display: flex;
+    align-content: center;
+}
+.cabecera>p{
+    margin-top: -10px;
+    width: 100%;
+}
+
+.DescripcionTaller{
+    column-count: 2;
+    column-gap: 5%;
+    column-rule: 1px solid rgb(0, 0, 0);
+}
+
+.DescripcionTaller>p{
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: center justify;
+}
+
+.imagen{
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    margin-top: 1%;
+}
+
+.datosPracticos{
+background-color: rgb(122, 121, 121);
+}
+article>div ol{
+    list-style-type: upper-roman;
+}
+article>div>ol>li>div{
+    background-color: rgb(153, 149, 149);
+}
+.fuentes{
+    display: flex;
+    flex-direction: column;
+}
+

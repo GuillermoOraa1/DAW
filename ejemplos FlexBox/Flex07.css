@@ -1,0 +1,32 @@
+#contenedor {
+  display: flex;
+  flex-direction: row;
+  /* flex-wrap: wrap; */
+  height: 1000px;
+  border: 1px solid red;
+
+}
+
+#contenedor > div {
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid green;
+  width: 200px;
+}
+
+/* EL COMPORTAMIENTO DE FLEX-SHRINK ES EQUIVALENTE, AUNQUE EL VALOR INICIAL ES 1 */
+#contenedor > div:nth-child(3) {
+    /* DECRECIMIENTO NORMAL, VALOR POR DEFECTO */
+    flex-shrink: 1;
+}
+
+#contenedor > div:nth-child(4) {
+    /* DECRECIMIENTO RÁPIDO, SE VERÁ MUY AFECTADO */
+    flex-shrink: 5;
+}
+
+/* PUESTO AQUÍ DETRÁS PARA PODER PROBAR CORRECTAMENTE */
+#contenedor > div:nth-child(2) {
+    /* SIN DECRECIMIENTO */
+    flex-shrink: 0;
+}

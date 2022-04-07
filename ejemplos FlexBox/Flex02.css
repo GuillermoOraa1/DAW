@@ -1,0 +1,29 @@
+#contenedor {
+  display: flex;
+  flex-direction: row;
+  height: 800 px;
+  border: 1px solid red;
+
+  /* HORIZONTAL */
+  justify-content: center;
+  /* justify-content: flex-start; */
+  /* justify-content: flex-end; */
+  /* justify-content: space-around; */
+  /* justify-content: space-between; */
+
+
+  /* VERTICAL */
+  align-items: center;
+  /* align-items: flex-start;*/ 
+  /* align-items: flex-end; */
+  /* align-items: stretch; */
+  /* align-items: baseline; */
+
+}
+
+#contenedor > div {
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid green;
+  width: 200px;
+}
