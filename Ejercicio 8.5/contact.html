@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Guillermo">
+    <meta name="description" content="Ejercicio con position float y grid">
+    <meta name="keywords" content="float, clear, grid">
+    <link rel="stylesheet" href="contact.css" type="text/css">
+    <title>Ejercicio 8.3.3</title>
+</head>
+<body>
+    <div id="anuncio">
+        <h1>Don't have reptiles as pets</h1>
+    </div>
+    <header class="titulo">Reptiles</header>
+    <nav class="menu">
+        <ul>
+            <li><a href="home.html">Home</a> </li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="tipography.html">Tipography</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <div class=contenedorFormulario>
+        <form action="http://servidorwebclara.ga" method="get">
+
+            <div class="titulo_formulario">
+                <h2>Formulario de contacto</h2>
+            </div>
+            
+            <fieldset>  
+                <legend>Datos de contacto</legend>
+
+                <p>
+                    <label for="Nombre">Nombre: </label>
+                    <input type="text" id="Nombre" name="nombre" size="30" pattern="[a-zA-Z ]{2,100}*" placeholder="Escribe aqui tu nombre" autofocus required>
+                    <span></span>
+                </p>
+
+                <p>
+                    <label for="edad">Edad: </label>
+                    <input type="number" id="edad" name="edad" min="12" max="99" placeholder="Edad" required>
+                    <span></span>
+                </p>
+                 
+                <p> 
+                    <label for="nacimiento">Fecha de nacimiento: </label>
+                    <input type="date" id="nacimiento" name="fecha" required>
+                    <span></span>
+                </p>
+
+                <p>
+                    <label>Sexo: </label>
+                        <input type="radio" name="sexo" value="h" required> Hombre
+                        <input type="radio" name="sexo" value="m" required checked> Mujer  
+                    <span></span>        
+                </p>
+
+                <p>
+                    <label for="ciudades">Indique su ciudad de origen: </label>
+                    <select name="ciudades" id="ciudades" >
+                        <optgroup label="España">
+                            <option value="madrid">Madrid</option>
+                            <option value="barcelona">Barcelona</option>
+                        </optgroup>
+                        <optgroup label="Francia">
+                            <option value="paris">Paris</option>
+                            <option value="poitiers">Poitiers</option>
+                        </optgroup>
+                    </select>
+                </p>
+
+                <p>
+                    <label for="telefono">Telefono: </label> 
+                    <input id="telefono" type="tel" name="telefono" pattern="[0-9]{9}"> 
+                    <span></span>
+                </p>
+                <p>
+                    <label for="email">Correo electronico: </label>
+                    <input id="email" type="email" name="email" required>
+                    <span></span>
+                </p>
+
+                <p>
+                    <label for="descripcion">Describe la causa de su mensaje</label>
+                </p>
+                <P>
+                    <textarea name="descripcion_personal" id="descripcion" cols="87" rows="5" maxlength="250">Hay que escribir aquí</textarea>
+                </P>
+
+                <P>
+                    <textarea name="avisos" id="avisos" cols="30" rows="5" readonly>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. 
+                    </textarea>
+                </P>
+                <p>
+                    <label>¿Conforme? </label>
+                    <input type="radio" name="conformidad" value="si" required checked> Si
+                    <input type="radio" name="conformidad" value="no" required> No
+                </p>
+
+            </fieldset>
+        </form>
+    </div>
+    <footer class="contactos">
+        <ul>
+            <li>LEGAL</li>
+            <li>Terms of Use</li>
+            <li>Privacy Policy</li>
+            <li>Interest-Based Ads</li>
+            <li>Cookie Policy</li>
+        </ul>
+        <ul>
+            <li>OUR SITES</li>
+            <li>Attend a Live Event</li>
+            <li>Books</li>
+            <li>Inspire Your Kids</li>
+            <li>Learn About Our Impact</li>
+            <li>Press Room</li>
+        </ul>
+        <ul>
+            <li>JOIN US</li>
+            <li>Subscribe</li>
+            <li>Customer Service</li>
+            <li>Pitch a Story</li>
+        </ul>
+        <ul>
+            <li>SIGUENOS</li>
+            <li><img src="images/social.png" alt="Redes sociales"></li>
+        </ul>
+    </footer>
+</body>
+</html>
