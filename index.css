@@ -1,0 +1,344 @@
+@font-face{
+    font-family: 'Norican-Regular';
+    src: url(fonts/Norican-Regular.ttf);
+}
+@font-face{
+    font-family: 'OpenSans-Regular';
+    src: url(fonts/OpenSans-Regular.ttf);
+}
+    
+*{
+    box-sizing: border-box; 
+    margin: 0%;
+    padding: 0%;
+}
+
+/*CSS del header*/
+.titulo{
+    background-color: rgb(250, 248, 245);
+    text-align: center;
+    height: 100px;
+    color: rgba(127, 255, 212, 0.979);
+    font-size: 3.5em;
+    letter-spacing: 2px;
+    font-style: italic;
+    font-family: Norican-Regular;
+}
+
+.menu{
+    height:50px;
+    background-color:white;
+}
+
+.menu ul {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;   
+    justify-content: space-evenly;
+    margin: auto;
+}
+
+.menu ul >li {
+    list-style: none;
+    align-self: center;
+}
+
+.menu a {
+    color: rgba(127, 255, 212, 0.979);
+    text-decoration: none;
+    font-family: OpenSans-Regular;
+    font-size: 2em;
+    font-weight: bold;
+    align-self: center;
+}
+
+/*CSS del contenido*/
+.texto_contenido{
+    font-size: 1.3em;
+}
+
+.titulo_menu{
+    height: 12vh;
+    background-color: rgb(250, 248, 245);
+    color:rgba(173, 170, 170, 0.479);
+    font-size: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content:flex-start;
+}
+
+.titulo_menu span{
+    width: 100%;
+    color: rgba(127, 255, 212, 0.979);
+    font-size: 3em;
+    font-family: Norican-Regular;
+    text-align: center;
+}
+
+.titulo_menu p{
+    width: 100%;
+    text-align: center;
+    font-family: OpenSans-Regular;
+    font-size: 1.5em;
+}
+
+.foto_texto{
+    display: flex;
+    flex-direction: row;
+
+}
+
+.foto_texto #imagen{
+    width:40%;
+}
+
+.foto_texto #imagen >img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.foto_texto #superpuesto{
+    background-color:white;
+    width:60%;
+    height: 40vh;
+}
+
+#superpuesto{
+    padding-left: 4%;
+    padding-right: 4%;
+    padding-bottom: 4%;
+}
+
+#superpuesto p{
+    color: rgba(127, 255, 212, 0.979);
+    font-size: 3em;
+    font-family: Norican-Regular;
+    padding-top: 4%;
+    padding-bottom: 4%;
+}
+
+#superpuesto span{
+    color:rgba(173, 170, 170, 0.89);
+    font-family: OpenSans-Regular;       
+}
+
+.columnas{
+    background-image: url('images/4.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding: 5%;
+    display:flex;
+    flex-wrap: wrap;
+}
+
+.columnas > p{
+    width:100%;
+    color:white;
+    font-size: 3em;
+    font-family: Norican-Regular;
+}
+
+.tituloColumna{
+    height: 4vh;
+    text-align: left;
+    color:white;
+    font-style: normal;
+    font-size: 1.6em;
+    font-family: OpenSans-Regular;
+}
+
+.columnas span{
+    color:white;
+    font-family: OpenSans-Regular;
+}
+
+.columnas #columna1{
+    width: 50%;
+    float: right;
+}
+
+.columnas #columna2{
+    width: 50%;
+    float: left;
+}
+
+.enlace{
+    background-image: url(images/Forest1.jpg);
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size:cover;
+    display:flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    padding: 5%;
+}
+
+.enlace>p{
+    width: 100%;
+    text-align: center;
+    font-family: OpenSans-Regular;
+    font-weight: bolder;
+    color: white;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+}
+
+.enlace>p:nth-child(1){
+    font-size: 1.8em;
+}
+
+.button {
+    border: none;
+    color: rgb(7, 7, 7);
+    padding: 15px 172px;
+    text-align: center;
+    display: inline-block;
+    font-size: 1em;
+    font-weight: bolder;
+    margin: 4px 2px;
+    background-color: rgb(255, 204, 0);
+}
+
+/*CSS del footer*/
+.contactos{
+    background-color: black;
+    color:white;
+    width:100%;
+    display:flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    padding-bottom: 3%;
+}
+
+.contactos>ul{
+    list-style: none;
+    font-family: OpenSans-Regular;
+}
+
+.contactos>ul>li:nth-child(1){
+    font-weight: bolder;
+    padding-top: 2em;
+    padding-bottom: 1em;
+}
+
+.redes_sociales{
+    display: none;
+}
+
+    /*CSS para vista de iPad*/
+@media (max-width: 1040px) {
+    .menu a{
+        font-size: 1em;
+    }
+
+    .texto_contenido{
+        font-size: 0.8em;
+    }
+    .titulo_menu>p{
+        font-size: 1em;
+    }
+}
+    /*CSS para vista de iPhone 11 Pro*/
+@media (max-width: 428px) {
+
+    /*CSS del header*/
+    .titulo{
+        font-size: 3em;
+    }
+    .menu a{
+        font-size: 1em;
+    }
+    .menu ul>li{
+        margin-left: 1%;
+        margin-right: 1%;
+    }
+
+    /*CSS del footer*/
+    .contactos{
+        height: 24vh;
+        flex-wrap: wrap;
+    }
+
+    .contactos>ul{
+        font-size: 0.8em;
+    }
+
+    .contactos>ul:nth-child(4){
+        display: none;
+    }
+    .redes_sociales{
+        display: flex;
+        justify-content: space-between;
+    }
+    .redes_sociales>p{
+        font-weight: bolder;
+        padding-top: 0.8em;
+        font-family: OpenSans-Regular;
+        font-size: 0.8em;
+    }   
+    .redes_sociales>img{
+        height: 70%;
+    } 
+
+    /*CSS del contenido*/
+    .titulo_menu{
+        height: 14vh;
+    }
+    #imagen{
+        display: none;
+    }
+
+    .foto_texto>#superpuesto{
+        width: 100%;
+        height: auto;
+    }
+
+    #superpuesto{
+        background-image: url('images/f1.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 140%; 
+    }
+
+    #superpuesto>p{
+        font-size: 2em;
+        text-align: center;
+    }
+
+    #superpuesto>span{
+        color: rgb(255, 255, 255);
+    }
+
+    .columnas{
+        height: auto;
+        background-image: none;
+        background-color: rgb(250, 248, 245);
+        
+    }
+
+    .columnas>p{
+        color: rgba(127, 255, 212, 0.979);
+        font-size: 2em;
+        text-align: center;        
+    }
+    .columnas span{
+        color: rgba(173, 170, 170, 0.479);
+    }
+
+    .tituloColumna{
+        color: rgba(173, 170, 170, 0.479);
+        height: auto;
+        text-align: center;
+        font-size: 1.4em;
+        margin-top: 2vh;
+        margin-bottom: 2vh;
+    }
+
+    .enlace button{
+        padding: 15px 70px;
+    }
+}
+     
