@@ -59,13 +59,13 @@
 }
 
 .titulo_menu{
-    height: 12vh;
     background-color: rgb(250, 248, 245);
     color:rgba(173, 170, 170, 0.479);
     font-size: 15px;
     display: flex;
     flex-wrap: wrap;
     align-content:flex-start;
+    padding-bottom: 3%;
 }
 
 .titulo_menu span{
@@ -102,7 +102,6 @@
 .foto_texto #superpuesto{
     background-color:white;
     width:60%;
-    height: 40vh;
 }
 
 #superpuesto{
@@ -239,6 +238,15 @@
     }
     .titulo_menu>p{
         font-size: 1em;
+    }
+
+    .columnas{
+        background-image: url('images/4.jpg');
+        background-repeat: repeat;
+        background-size: 100%;
+        padding: 5%;
+        display:flex;
+        flex-wrap: wrap;
     }
 }
     /*CSS para vista de iPhone 11 Pro*/

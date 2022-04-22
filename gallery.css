@@ -192,7 +192,7 @@
     margin-left: auto;
     margin-right: auto;
     display:inline-grid;
-    grid-template-rows: 20% 80%;
+    grid-template-rows: 25% 75%;
     padding-bottom: 3%;
 }
 .videos_contenido_principal{
@@ -242,14 +242,12 @@
     display:inline-grid;
     grid-template-columns: repeat(5, 19%);
     grid-template-rows: 75% 25%;
-    grid-gap: 5px 10px; 
-
-    
+    grid-gap: 5px 10px;  
     font-size: 1em;
     font-weight: bolder;
     font-family: OpenSans-Regular;
     letter-spacing: 0.05em;
-    padding-bottom: 1em;
+    padding-bottom: 5%;
 }
 
 #contenido_secundario_imagenes1{

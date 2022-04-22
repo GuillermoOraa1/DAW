@@ -215,12 +215,16 @@ input[type='number']:out-of-range + span::after {
 @media (max-width: 1040px) {
     /*Header*/
     .menu a{
-        font-size: 1.5em;
+        font-size: 1em;
     }
 
     /*CSS formulario*/
     #anuncio{
         display: none;
+    }
+
+    .titulo_formulario{
+        font-size: 1.2em;
     }
 
     .contenedorFormulario>form{
