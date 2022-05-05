@@ -26,7 +26,7 @@ public class Ejercicio1BMain {
         int mayor,menor,numero;
         Scanner sc =null;
         try{
-            File ficheroNumeros= new File("C:\\Users\\DAW\\Desktop\\DatosParaEjerciciosFicheros-2\\numeros.txt");
+            File ficheroNumeros= new File("sources\\DatosParaEjerciciosFicheros-2\\numeros.txt");
             sc = new Scanner(ficheroNumeros); 
             mayor=menor=sc.nextInt();
             while(sc.hasNext()){

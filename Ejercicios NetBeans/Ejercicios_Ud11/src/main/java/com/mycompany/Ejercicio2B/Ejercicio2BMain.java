@@ -25,7 +25,7 @@ public class Ejercicio2BMain {
     }
     
     public static void mostrarDatosDelAlumno(){
-        File FicheroDatosDeLosAlumnos= new File("C:\\Users\\DAW\\Desktop\\DatosParaEjerciciosFicheros-2\\alumnos_notas.txt");
+        File FicheroDatosDeLosAlumnos= new File("sources\\DatosParaEjerciciosFicheros-2\\alumnos_notas.txt");     
         Scanner datosDeLosAlumnos=null;
         try{
             datosDeLosAlumnos= new Scanner(FicheroDatosDeLosAlumnos);
@@ -61,6 +61,5 @@ public class Ejercicio2BMain {
         } finally{
             datosDeLosAlumnos.close();
         }
-        
     }
 }

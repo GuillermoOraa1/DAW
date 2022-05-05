@@ -39,13 +39,15 @@ public class Ejercicio4BMain {
             String rutaApellidos=sc.nextLine();
             System.out.println("Escriba la ruta del archivo objetivo.");
             String rutaApellidos=sc.nextLine();
+            System.out.println("Escriba el numero de nombres a generar.");
+            int numeroNombres=sc.nextInt);
             */
             FicheroNombres = new RandomAccessFile(rutaNombres, "r");
             FicheroApellidos = new RandomAccessFile(rutaApellidos, "r");
             FicheroEscritura = new RandomAccessFile(rutaEscritura, "rw");
             for (int i = 0; i < 5; i++) {
-                long posicionNombres=0+(long) (Math.random()*(FicheroNombres.length()- 0));
-                long posicionApellidos=0+(long) (Math.random()*(FicheroApellidos.length()- 0));
+                long posicionNombres=(long) (Math.random()*(FicheroNombres.length()));
+                long posicionApellidos=(long) (Math.random()*(FicheroApellidos.length()));
                 FicheroNombres.seek(posicionNombres);
                 FicheroNombres.readLine();
                 String nombre= FicheroNombres.readLine();

@@ -32,7 +32,7 @@ public class Ejercicio3BMain {
     public static void solicitarArchivoLectura(){
         ArrayList<String>contenidoFicherolectura= new ArrayList<String>();
         //System.out.println("Escriba la ruta del archivo origen.");
-        File ficheroLectura=new File("C:\\Users\\DAW\\Desktop\\DatosParaEjerciciosFicheros-2\\usa_personas.txt");
+        File ficheroLectura=new File("sources\\DatosParaEjerciciosFicheros-2\\usa_personas.txt");
         Scanner textoLeido=null;
         if (ficheroLectura.exists()){
             try {
@@ -52,7 +52,7 @@ public class Ejercicio3BMain {
     
     public static void crearArchivoEscritura(ArrayList<String>contenido){
         //System.out.println("Escriba la ruta del archivo destino.");        
-        File ficheroEscritura=new File("C:\\Users\\DAW\\Desktop\\DatosParaEjerciciosFicheros-2\\usa_personas_sorted.txt");
+        File ficheroEscritura=new File("sources\\DatosParaEjerciciosFicheros-2\\usa_personas_sorted.txt");
         try{
            FileWriter FileWriterFicheroEscritura= new FileWriter(ficheroEscritura,false);
            PrintWriter PrintWriterFicheroEscritura=new PrintWriter(FileWriterFicheroEscritura);

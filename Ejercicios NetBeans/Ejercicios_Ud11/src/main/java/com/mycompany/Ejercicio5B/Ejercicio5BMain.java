@@ -46,9 +46,18 @@ public class Ejercicio5BMain {
                 String linea;
                 while((linea=bufferReaderContenidoDiccionario.readLine()) != null){
                     //System.out.println(linea);
-                    if(Character.compare(linea.toUpperCase().charAt(0),(char)i)==0){
-                      printWriterFicheroPorLetra.println(linea);  
-                    }  
+                    //if (Character.compare(linea.charAt(0),(char)'á')==0)linea.replace(linea.charAt(0), (char)'a');
+                    if(Character.compare(linea.charAt(0),(char)'-')==0)
+                    {
+                        if(Character.compare(linea.toUpperCase().charAt(1),(char)i)==0){
+                          printWriterFicheroPorLetra.println(linea);  
+                        }                        
+                    }else {
+                        if(Character.compare(linea.toUpperCase().charAt(0),(char)i)==0){
+                          printWriterFicheroPorLetra.println(linea);  
+                        }                    
+                    }
+  
                 }
                 fileWriterFicheroPorLetra.close();
                 printWriterFicheroPorLetra.close();
