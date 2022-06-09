@@ -27,7 +27,7 @@ public class Ejercicio2Main {
     }
     public static void mostrarDatos(){
         try{
-            
+            /*
             String linea;
             File ficheroRestaurantes= new File("C:\\Users\\DAW\\Desktop\\EjerciciosFicheros\\Restaurants.csv");
             FileReader lectorFicheroRestaurantes= new FileReader(ficheroRestaurantes);
@@ -39,8 +39,7 @@ public class Ejercicio2Main {
                 }                
             }
             restaurantes.close();
-            
-            /*
+            */
             //File ficheroRestaurantes= new File("C:Users"+File.separator+"DAW"+File.separator+"Desktop"+File.separator+"EjerciciosFicheros"+File.separator+"Restaurants.csv");
             File ficheroRestaurantes= new File("C:\\Users\\DAW\\Desktop\\EjerciciosFicheros\\Restaurants.csv");
             System.out.println(ficheroRestaurantes.exists());
@@ -50,7 +49,7 @@ public class Ejercicio2Main {
                 System.out.println(sc.nextLine());
             }
             sc.close();
-            */
+            
         }catch(FileNotFoundException f){
             f.getMessage();
         }catch(Exception e){
